@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+//Color variables
+$primary-color: #61dafb; //#77bfa3;
+$error-color: #ea4848;
+
+//Gray color variables
+
+//Other variables
+$border-radius: 10px;
+$box-shadow: 0 0 10px #adadad;
+$transition: 500ms ease;
+
+//Typography variables
+$main-font: "Lato", "Arial", "sans-serif";
+
+body,
+html,
+button,
+ul,
+li,
+input,
+textarea {
+  padding: 0;
+  margin: 0;
+  font-family: $main-font;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.btn {
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px 25px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: $transition;
+  &--primary {
+    background-color: $primary-color;
+    &:hover {
+      background-color: darken($primary-color, 15%);
+    }
+  }
+  &--medium {
+    margin-top: 25px;
+    width: 200px;
+  }
+}
+
+.projects {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.resume {
+  padding: 25px 75px;
+}
+
+.contact {
+  display: flex;
+  padding: 50px 75px;
+  &__form {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  &__cards {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #6e6e6e;
+  transition: $transition;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.fa-briefcase,
+.fa-graduation-cap,
+.fa-certificate {
+  margin-right: 15px;
+}
+
+//Animations
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//Components
+@import "./components/Container/container.scss";
+@import "./components/Row/row.scss";
+@import "./components/Column/column.scss";
+@import "./components/Menu/menu.scss";
+@import "./components/Layout/layout.scss";
+@import "./components/Thumb/thumb.scss";
+@import "./components/Experience/experience.scss";
+@import "./components/Box/box.scss";
+@import "./components/ContactCard/contactcard.scss";
+@import "./components/Form/form.scss";
+@import "./components/InputField/inputfield.scss";
+@import "./components/Textarea/textarea.scss";
+@import "./components/ImageGallery/imagegallery.scss";
+
+//Pages
+@import "./styles/pages/project.scss";
