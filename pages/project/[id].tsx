@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { Layout } from "../../components/Layout";
-import { ImageGallery } from "../../components/ImageGallery";
-import { Container, Row, Col } from "react-bootstrap";
+import { Layout } from "../../components/UI/Layout";
+import { ImageGallery } from "../../components/UI/ImageGallery";
+import { Container, Row, Col } from "styled-bootstrap-grid";
 
 const Project = () => {
   const [project, setProject] = useState(null);

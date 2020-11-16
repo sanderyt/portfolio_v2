@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
-import { Textfield } from "../../Textfield";
-import { Button } from "../../Button";
+import { Textfield } from "../Textfield";
+import { Button } from "../../UI/Button";
 
 export const Contactform = () => {
   const { register, handleSubmit, errors } = useForm();

@@ -6,8 +6,8 @@ import {
   faGraduationCap
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Layout } from "../components/Layout";
-import { Experience } from "../components/Experience";
+import { Layout } from "../components/UI/Layout";
+import { Experience } from "../components/UI/Experience";
 
 const Resume = () => {
   return (

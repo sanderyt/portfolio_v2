@@ -71,11 +71,11 @@ a {
 }
 
 //Components
-@import "./components/Menu/menu.scss";
-@import "./components/Thumb/thumb.scss";
-@import "./components/Experience/experience.scss";
-@import "./components/Box/box.scss";
-@import "./components/ContactCard/contactcard.scss";
-@import "./components/Textfield/textfield.scss";
-@import "./components/Textarea/textarea.scss";
-@import "./components/ImageGallery/imagegallery.scss";
+@import "./components/UI/Menu/menu.scss";
+@import "./components/UI/Thumb/thumb.scss";
+@import "./components/UI/Experience/experience.scss";
+@import "./components/UI/Box/box.scss";
+@import "./components/UI/ContactCard/contactcard.scss";
+@import "./components/Forms/Textfield/textfield.scss";
+@import "./components/Forms/Textarea/textarea.scss";
+@import "./components/UI/ImageGallery/imagegallery.scss";

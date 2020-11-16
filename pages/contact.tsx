@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Layout } from "../components/Layout";
-import { ContactCard } from "../components/ContactCard";
-import { Container, Row, Col } from "react-bootstrap";
+import { Layout } from "../components/UI/Layout";
+import { ContactCard } from "../components/UI/ContactCard";
+import { Container, Row, Col } from "styled-bootstrap-grid";
 import { Contactform } from "../components/Forms/Contactform";
 
 const Contact = () => {
@@ -10,10 +10,10 @@ const Contact = () => {
     <Layout>
       <Container>
         <Row>
-          <Col>
+          <Col md={6}>
             <Contactform />
           </Col>
-          <Col>
+          <Col md={6}>
             <ContactCard
               text="+31 6 43 49 93 41"
               type="Telephone"

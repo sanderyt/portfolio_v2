@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { Layout } from "../components/Layout";
-import { Thumb } from "../components/Thumb";
+import { Layout } from "../components/UI/Layout";
+import { Thumb } from "../components/UI/Thumb";
 
 const Projects = () => {
   const [projects, setProjects] = useState(null);
