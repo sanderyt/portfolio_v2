@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
+import { lighten } from "polished";
 
 type ButtonProps = {
   children: ReactNode;
@@ -22,7 +23,9 @@ export const Button: FC<ButtonProps> = ({ children, isSubmit }) => {
 
     &:hover {
       background-color: ${props =>
-        props.primary ? `${props.theme.colors.secondaryColor}` : "navy"};
+        props.primary
+          ? lighten(0.05, props.theme.colors.primaryColor)
+          : "navy"};
     }
   `;
 
