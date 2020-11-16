@@ -24,7 +24,7 @@ export const ContactCard = ({ icon, text, type }) => {
     justify-content: center;
     & .fa-phone,
     .fa-home {
-      color: red;
+      color: ${props => `${props.theme.colors.primaryColor}`};
       font-size: 1.5rem;
     }
   `;
