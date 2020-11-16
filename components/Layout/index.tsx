@@ -1,14 +1,17 @@
 import React from "react";
 
 import { Menu } from "../Menu";
+import { Container, Row, Col } from "react-bootstrap";
 
 export const Layout = ({ children }) => {
   return (
-    <div className="layout">
-      <div className="layout__menu">
-        <Menu />
-      </div>
-      <div className="layout__content">{children}</div>
-    </div>
+    <Container fluid>
+      <Row>
+        <Col md={3}>
+          <Menu />
+        </Col>
+        <Col md={9}>{children}</Col>
+      </Row>
+    </Container>
   );
 };
