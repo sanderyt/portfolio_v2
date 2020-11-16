@@ -3,8 +3,17 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
   colors: {
-    primaryColor: "#61DAFB",
-    secondaryColor: "#06B49A"
+    primaryColor: "#06B49A",
+    secondaryColor: "#06B49A",
+    white: "#FFF"
+  },
+  transition: {
+    ease: "250ms"
+  },
+  borderRadius: {
+    small: "1px",
+    medium: "2px",
+    large: "5px"
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {

@@ -15,20 +15,18 @@ type TextfieldProps = DetailedHTMLProps<
 > & {
   name: string;
   placeholder: string;
-  type: string;
   register?: () => RefReturn;
 };
 
 export const Textfield: FC<TextfieldProps> = ({
   name,
   placeholder,
-  type,
   register
 }) => {
   return (
     <div className="textfield">
       <span>{name}</span>
-      <input type={type} id={name} placeholder={placeholder} ref={register} />
+      <input type="text" id={name} placeholder={placeholder} ref={register} />
     </div>
   );
 };
