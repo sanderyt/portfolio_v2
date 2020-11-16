@@ -27,6 +27,7 @@ export const Textfield: FC<TextfieldProps> = ({
 }) => {
   return (
     <div className="textfield">
+      <span>{name}</span>
       <input type={type} id={name} placeholder={placeholder} ref={register} />
     </div>
   );
