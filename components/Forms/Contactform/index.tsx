@@ -1,13 +1,17 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+
 import { Textfield } from "../../Textfield";
 import { Button } from "../../Button";
 
 export const Contactform = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => console.log(data);
+
   return (
-    <form>
+    <form noValidate onSubmit={handleSubmit(onSubmit)}>
       <h1>Get in touch</h1>
       <Textfield
         name="Name"
@@ -24,7 +28,10 @@ export const Contactform = () => {
         placeholder="Please enter your name"
         register={register}
       />
-      <Button>Send 👉</Button>
+      <Button isSubmit>
+        <FontAwesomeIcon icon={faPaperPlane} />
+        Send
+      </Button>
     </form>
   );
 };
