@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Menu = () => {
+export const Menu = () => {
   return (
     <div className="menu">
       <div className="menu__top">
@@ -34,5 +34,3 @@ const Menu = () => {
     </div>
   );
 };
-
-export default Menu;

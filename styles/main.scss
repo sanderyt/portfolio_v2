@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-
-//Color variables
-$primary-color: #61dafb; //#77bfa3;
-$error-color: #ea4848;
-
-//Gray color variables
-
-//Other variables
-$border-radius: 10px;
-$box-shadow: 0 0 10px #adadad;
-$transition: 500ms ease;
-
-//Typography variables
-$main-font: "Lato", "Arial", "sans-serif";
+@import "./variables";
 
 body,
 html,
@@ -107,9 +94,6 @@ a {
 }
 
 //Components
-@import "./components/Container/container.scss";
-@import "./components/Row/row.scss";
-@import "./components/Column/column.scss";
 @import "./components/Menu/menu.scss";
 @import "./components/Layout/layout.scss";
 @import "./components/Thumb/thumb.scss";
@@ -117,9 +101,6 @@ a {
 @import "./components/Box/box.scss";
 @import "./components/ContactCard/contactcard.scss";
 @import "./components/Form/form.scss";
-@import "./components/InputField/inputfield.scss";
+@import "./components/Textfield/textfield.scss";
 @import "./components/Textarea/textarea.scss";
 @import "./components/ImageGallery/imagegallery.scss";
-
-//Pages
-@import "./styles/pages/project.scss";

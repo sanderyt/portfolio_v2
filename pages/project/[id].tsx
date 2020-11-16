@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import Layout from "../components/Layout/Layout";
-import Row from "../components/Row/Row";
-import Column from "../components/Column/Column";
-import Container from "../components/Container/Container";
-import ImageGallery from "../components/ImageGallery/ImageGallery";
+import { Layout } from "../../components/Layout";
+import { ImageGallery } from "../../components/ImageGallery";
+import { Container, Row, Col } from "react-bootstrap";
 
 const Project = () => {
   const [project, setProject] = useState(null);
@@ -37,15 +35,15 @@ const Project = () => {
       )}
       <Container>
         <Row>
-          <Column>
+          <Col>
             {project && (
               <div>
                 <p>{project.description[0]}</p>
                 <p>{project.description[1]}</p>
               </div>
             )}
-          </Column>
-          <Column>{project && <ImageGallery images={project.images} />}</Column>
+          </Col>
+          <Col>{project && <ImageGallery images={project.images} />}</Col>
         </Row>
       </Container>
     </Layout>

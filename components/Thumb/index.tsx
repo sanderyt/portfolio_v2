@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Thumb = ({ name, tech, slug, id, thumb }) => {
+export const Thumb = ({ name, tech, slug, id, thumb }) => {
   return (
     <Link href={`/project?id=${id}`}>
       <div className="thumb">
@@ -16,5 +16,3 @@ const Thumb = ({ name, tech, slug, id, thumb }) => {
     </Link>
   );
 };
-
-export default Thumb;

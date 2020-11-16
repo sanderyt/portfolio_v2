@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ImageGallery = ({ images }) => {
+export const ImageGallery = ({ images }) => {
   const [idx, setIdx] = useState(0);
 
   const nextImage = () => {
@@ -23,5 +23,3 @@ const ImageGallery = ({ images }) => {
     </div>
   );
 };
-
-export default ImageGallery;

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Experience = ({ children, date, title, company }) => {
+export const Experience = ({ children, date, title, company }) => {
   return (
     <div className="experience">
       <div className="experience__timeline">
@@ -14,5 +14,3 @@ const Experience = ({ children, date, title, company }) => {
     </div>
   );
 };
-
-export default Experience;
