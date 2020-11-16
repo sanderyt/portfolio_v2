@@ -5,7 +5,8 @@ const theme = {
   colors: {
     primaryColor: "#06B49A",
     secondaryColor: "#06B49A",
-    white: "#FFF"
+    white: "#FFF",
+    red: "#e74c3c"
   },
   transition: {
     ease: "250ms"
@@ -17,9 +18,10 @@ const theme = {
   },
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em"
+    extraSmall: "0.75rem",
+    small: "1rem",
+    medium: "2rem",
+    large: "3rem"
   }
 };
 

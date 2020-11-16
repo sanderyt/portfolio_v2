@@ -7,31 +7,29 @@ type ButtonProps = {
   isSubmit?: boolean;
 };
 
-export const Button: FC<ButtonProps> = ({ children, isSubmit }) => {
-  const Button = styled.button`
-    border: none;
-    outline: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: ${props => `${props.theme.fontSizes.small}`};
-    color: ${props => `${props.theme.colors.white}`};
-    border-radius: ${props => `${props.theme.borderRadius.large}`};
+const DefaultButton = styled.button`
+  border: none;
+  outline: none;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: ${props => `${props.theme.fontSizes.small}`};
+  color: ${props => `${props.theme.colors.white}`};
+  border-radius: ${props => `${props.theme.borderRadius.large}`};
+  background-color: ${props =>
+    props.primary ? `${props.theme.colors.primaryColor}` : "navy"};
+  transition: ${props => `${props.theme.transition.ease}`};
+
+  &:hover {
     background-color: ${props =>
-      props.primary ? `${props.theme.colors.primaryColor}` : "navy"};
-    transition: ${props => `${props.theme.transition.ease}`};
+      props.primary ? lighten(0.05, props.theme.colors.primaryColor) : "navy"};
+  }
+`;
 
-    &:hover {
-      background-color: ${props =>
-        props.primary
-          ? lighten(0.05, props.theme.colors.primaryColor)
-          : "navy"};
-    }
-  `;
-
+export const Button: FC<ButtonProps> = ({ children, isSubmit }) => {
   return (
-    <Button primary type={isSubmit ? "submit" : "button"}>
+    <DefaultButton primary type={isSubmit ? "submit" : "button"}>
       {children}
-    </Button>
+    </DefaultButton>
   );
 };

@@ -2,31 +2,40 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 import { Textfield } from "../Textfield";
 import { Button } from "../../UI/Button";
 
+const schema = yup.object().shape({
+  name: yup.string().required(),
+  email: yup
+    .string()
+    .email()
+    .required()
+});
+
 export const Contactform = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm({
+    resolver: yupResolver(schema)
+  });
   const onSubmit = data => console.log(data);
 
   return (
     <form noValidate onSubmit={handleSubmit(onSubmit)}>
       <h1>Get in touch</h1>
       <Textfield
-        name="Name"
+        name="name"
         placeholder="Please enter your name"
         register={register}
+        error={errors.name}
       />
       <Textfield
-        name="Email"
+        name="email"
         placeholder="Please enter an e-mail"
         register={register}
-      />
-      <Textfield
-        name="Name"
-        placeholder="Please enter your name"
-        register={register}
+        error={errors.email}
       />
       <Button isSubmit>
         <FontAwesomeIcon icon={faPaperPlane} />
