@@ -10,10 +10,10 @@ const Contact = () => {
     <Layout>
       <Container>
         <Row>
-          <Col md={6}>
+          <Col md={6} noGutter={true}>
             <Contactform />
           </Col>
-          <Col md={6}>
+          <Col md={6} noGutter={true}>
             <ContactCard
               text="+31 6 43 49 93 41"
               type="Telephone"
