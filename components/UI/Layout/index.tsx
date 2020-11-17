@@ -2,6 +2,7 @@ import React from "react";
 
 import { Menu } from "../Menu";
 import { Container, Row, Col } from "styled-bootstrap-grid";
+import { Header } from "../Header";
 
 export const Layout = ({ children }) => {
   return (
@@ -11,6 +12,7 @@ export const Layout = ({ children }) => {
           <Menu />
         </Col>
         <Col lg={9} md={12} noGutter={true}>
+          <Header />
           {children}
         </Col>
       </Row>
