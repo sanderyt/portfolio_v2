@@ -1,5 +1,16 @@
-import React from "react";
+import React, { ReactNode, FC } from "react";
+import styled from "styled-components";
 
-export const Box = ({ children }) => {
-  return <div className="box">{children}</div>;
+const StyledBox = styled.div`
+  border-radius: ${props => props.theme.borderRadius.large};
+  box-shadow: ${props => props.theme.boxShadow};
+  padding: 25px;
+`;
+
+type BoxProps = {
+  children: ReactNode;
+};
+
+export const Box: FC<BoxProps> = ({ children }) => {
+  return <StyledBox>{children}</StyledBox>;
 };
