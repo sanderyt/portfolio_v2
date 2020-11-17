@@ -7,6 +7,7 @@ import * as yup from "yup";
 
 import { Textfield } from "../Textfield";
 import { Button } from "../../UI/Button";
+import { Textarea } from "../Textarea";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -36,6 +37,12 @@ export const Contactform = () => {
         placeholder="Please enter an e-mail"
         register={register}
         error={errors.email}
+      />
+      <Textarea
+        name="message"
+        placeholder="Type your message"
+        register={register}
+        error={errors.message}
       />
       <Button isSubmit>
         <FontAwesomeIcon icon={faPaperPlane} />

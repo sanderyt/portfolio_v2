@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faHome } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
-const ContactCardContainer = styled.div`
+const StyledContactCard = styled.div`
   display: flex;
   width: 400px;
   cursor: pointer;
@@ -17,7 +17,7 @@ const ContactCardContainer = styled.div`
   transition: 500ms;
 `;
 
-const ContactCardIcon = styled.div`
+const Icon = styled.div`
   display: flex;
   flex: 1;
   justify-content: center;
@@ -28,7 +28,7 @@ const ContactCardIcon = styled.div`
   }
 `;
 
-const ContactCardText = styled.div`
+const Text = styled.div`
   background-color: #f7f7f7;
   border-bottom-right-radius: 5px;
   align-items: center;
@@ -46,14 +46,14 @@ const ContactCardText = styled.div`
 
 export const ContactCard = ({ icon, text, type }) => {
   return (
-    <ContactCardContainer>
-      <ContactCardIcon>
+    <StyledContactCard>
+      <Icon>
         <FontAwesomeIcon icon={faHome} />
-      </ContactCardIcon>
-      <ContactCardText>
+      </Icon>
+      <Text>
         <span className="type">{type}</span>
         <span>{text}</span>
-      </ContactCardText>
-    </ContactCardContainer>
+      </Text>
+    </StyledContactCard>
   );
 };

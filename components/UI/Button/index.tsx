@@ -7,7 +7,7 @@ type ButtonProps = {
   isSubmit?: boolean;
 };
 
-const DefaultButton = styled.button`
+const StyledButton = styled.button`
   border: none;
   outline: none;
   padding: 12px 24px;
@@ -28,8 +28,8 @@ const DefaultButton = styled.button`
 
 export const Button: FC<ButtonProps> = ({ children, isSubmit }) => {
   return (
-    <DefaultButton primary type={isSubmit ? "submit" : "button"}>
+    <StyledButton primary type={isSubmit ? "submit" : "button"}>
       {children}
-    </DefaultButton>
+    </StyledButton>
   );
 };
