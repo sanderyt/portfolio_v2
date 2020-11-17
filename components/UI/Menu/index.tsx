@@ -14,6 +14,7 @@ const StyledMenu = styled(FlexBox)`
 
   @media only screen and (max-width: 768px) {
     width: 100%;
+    transform: translateX(-125%);
   }
 `;
 

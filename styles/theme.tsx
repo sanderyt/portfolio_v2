@@ -15,6 +15,7 @@ const theme = {
     }
   },
   spacing: {
+    micro: "4px",
     normal: "8px",
     small: "16px",
     medium: "24px",
@@ -32,7 +33,8 @@ const theme = {
   borderRadius: {
     small: "1px",
     medium: "2px",
-    large: "5px"
+    large: "5px",
+    round: "50%"
   },
   boxShadow: "0 0 10px #adadad",
   fonts: {
