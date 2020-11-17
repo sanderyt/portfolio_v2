@@ -16,6 +16,7 @@ const theme = {
     medium: "2px",
     large: "5px"
   },
+  boxShadow: "0 0 10px #adadad",
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
     extraSmall: "0.75rem",

@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
+import { FlexBox } from "react-styled-flex";
+
 type ThumbProps = {
   name: string;
   tech: string;
@@ -10,47 +12,46 @@ type ThumbProps = {
   thumb: string;
 };
 
-const Container = styled.div`
+const StyledThumb = styled(FlexBox)`
   height: auto;
   width: 400px;
-  box-shadow: $box-shadow;
-  border-radius: $border-radius;
+  box-shadow: ${props => props.theme.boxShadow};
+  border-radius: ${props => props.theme.borderRadius.large};
   margin-top: 50px;
-  display: flex;
   cursor: pointer;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
   animation: fadeIn 1s forwards;
-  transition: $transition;
+  transition: ${props => props.theme.transition.ease};
 `;
 
-const Image = styled.div``;
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: ${props => props.theme.borderRadius.large};
+  object-fit: contain;
+`;
 
-const Details = styled.div`
+const Details = styled(FlexBox)`
   background-color: #f7f7f7;
-  border-top: 5px solid $primary-color;
+  border-top: 5px solid ${props => props.theme.colors.primaryColor};
   width: 100%;
   height: 100px;
-  display: flex;
-  align-items: center;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
-  flex-direction: column;
+  border-bottom-left-radius: ${props => props.theme.borderRadius.large};
+  border-bottom-right-radius: ${props => props.theme.borderRadius.large};
 `;
+
+const Name = styled.h3``;
+const Tech = styled.span``;
 
 export const Thumb: FC<ThumbProps> = ({ name, tech, slug, id, thumb }) => {
   return (
-    <Link href={`/project?id=${id}`}>
-      <div className="thumb">
-        <div className="thumb__image">
-          <img src={thumb} alt={name} className="image" />
-        </div>
-        <div className="thumb__details">
-          <h3>{name}</h3>
-          <span>Built with {tech}</span>
-        </div>
-      </div>
+    <Link href={`/project/${slug}`}>
+      <StyledThumb center column>
+        <Image src={thumb} alt={name} />
+        <Details column alignItems="center">
+          <Name>{name}</Name>
+          <Tech>Built with {tech}</Tech>
+        </Details>
+      </StyledThumb>
     </Link>
   );
 };
