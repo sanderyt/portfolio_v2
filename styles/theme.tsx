@@ -18,7 +18,8 @@ const theme = {
   },
   boxShadow: "0 0 10px #adadad",
   fonts: {
-    main: ["sans-serif", "Roboto"]
+    main: ["Montserrat", "sans-serif"],
+    heading: ["WorkSans", "sans-serif"]
   },
   fontSizes: {
     extraSmall: "0.75rem",

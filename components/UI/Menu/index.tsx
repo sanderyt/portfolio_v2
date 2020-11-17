@@ -14,7 +14,7 @@ const StyledMenu = styled.div`
   background-color: #fcfcfc;
   justify-content: space-between;
   height: 100vh;
-  box-shadow: $box-shadow;
+  box-shadow: ${props => props.theme.boxShadow};
 `;
 
 const Top = styled.div`
@@ -43,11 +43,11 @@ const NavigationItem = styled.li`
   list-style: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 15px 0;
-  transition: $transition;
+  transition: ${props => props.theme.transition.ease};
   &:hover {
     background-color: #f7f7f7;
-    color: $primary-color;
-    border-left: 5px solid $primary-color;
+    color: ${props => props.theme.colors.primaryColor};
+    border-right: 5px solid ${props => props.theme.colors.primaryColor};
   }
 `;
 
