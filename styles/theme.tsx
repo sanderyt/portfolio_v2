@@ -6,7 +6,25 @@ const theme = {
     primaryColor: "#06B49A",
     secondaryColor: "#06B49A",
     white: "#FFF",
-    red: "#e74c3c"
+    red: "#e74c3c",
+    greyScales: {
+      veryLight: "#fcfcfc",
+      light: "#f7f7f7",
+      medium: "#ccc",
+      darker: "#aaa"
+    }
+  },
+  spacing: {
+    normal: "8px",
+    small: "16px",
+    medium: "24px",
+    large: "32px"
+  },
+  layers: {
+    layer1: "1",
+    layer2: "2",
+    layer3: "3",
+    layer4: "4"
   },
   transition: {
     ease: "250ms"
@@ -18,8 +36,8 @@ const theme = {
   },
   boxShadow: "0 0 10px #adadad",
   fonts: {
-    main: ["Montserrat", "sans-serif"],
-    heading: ["WorkSans", "sans-serif"]
+    main: ["WorkSans", "sans-serif"],
+    heading: ["Montserrat", "sans-serif"]
   },
   fontSizes: {
     extraSmall: "0.75rem",
