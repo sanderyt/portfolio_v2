@@ -8,12 +8,13 @@ import {
 
 import { Layout } from "../components/UI/Layout";
 import { Experience } from "../components/UI/Experience";
+import { Header } from "../components/UI/Header";
 
 const Resume = () => {
   return (
     <Layout>
+      <Header title="Resume" />
       <div className="resume">
-        <h1>Resume</h1>
         <h2>
           <FontAwesomeIcon icon={faBriefcase} />
           Experience

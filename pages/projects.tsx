@@ -1,41 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { FC } from "react";
+import { GetServerSideProps } from "next";
 
 import { Layout } from "../components/UI/Layout";
 import { Thumb } from "../components/UI/Thumb";
 import { Header } from "../components/UI/Header";
-import { GetServerSideProps } from "next";
 
-const Projects = () => {
-  const [projects, setProjects] = useState(null);
+type ProjectsProps = {
+  projects: Object[];
+};
 
-  useEffect(() => {
-    //make this async later
-    fetch("../data.json")
-      .then(response => {
-        return response.json();
-      })
-      .then(response => {
-        setProjects(response.projects);
-      });
-  }, []);
-
+const Projects: FC<ProjectsProps> = () => {
   return (
     <Layout>
-      <Header />
-      <div className="projects">
-        {projects &&
-          projects.map(project => {
-            return <Thumb {...project} />;
-          })}
-      </div>
+      <Header title="Projects" />
     </Layout>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  return {
-    props: {}
-  };
-};
+// export const getServerSideProps: GetServerSideProps = async ctx => {
+//   return {
+//     props: {}
+//   };
+// };
 
 export default Projects;

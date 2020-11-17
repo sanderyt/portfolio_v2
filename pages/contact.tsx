@@ -5,10 +5,12 @@ import { ContactCard } from "../components/UI/ContactCard";
 import { Container, Row, Col } from "styled-bootstrap-grid";
 import { FlexBox } from "react-styled-flex";
 import { Contactform } from "../components/Forms/Contactform";
+import { Header } from "../components/UI/Header";
 
 const Contact = () => {
   return (
     <Layout>
+      <Header title="Contact" />
       <Container fluid>
         <Row>
           <Col lg={6} noGutter={true}>
