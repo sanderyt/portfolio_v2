@@ -9,6 +9,12 @@ const StyledMenu = styled(FlexBox)`
   z-index: ${props => props.theme.layers.layer2};
   background-color: ${props => props.theme.colors.greyScales.veryLight};
   box-shadow: ${props => props.theme.boxShadow};
+  position: fixed;
+  width: 400px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const NavigationItem = styled(FlexBox)`
