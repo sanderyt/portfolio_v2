@@ -13,8 +13,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 });
 
-import "../styles/main.scss";
-
 function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
