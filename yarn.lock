@@ -4631,6 +4631,11 @@ react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-styled-flex@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/react-styled-flex/-/react-styled-flex-1.0.19.tgz#629c9b50221504269289a00677aeb1f24074dd3b"
+  integrity sha512-D3to/smyB0vokW9EPF9bVR/Rq9o/eVY7NLpuZuv1ofG0twVxpc4RMqmHqzqXoeUNOmYnTakVln5TSUP6qHtpCg==
+
 react@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
