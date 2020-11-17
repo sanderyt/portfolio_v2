@@ -12,7 +12,6 @@ export const Layout = ({ children }) => {
           <Menu />
         </Col>
         <Col lg={9} md={12} noGutter={true}>
-          <Header />
           {children}
         </Col>
       </Row>
