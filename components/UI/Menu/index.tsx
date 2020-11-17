@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -11,10 +11,12 @@ const StyledMenu = styled(FlexBox)`
   box-shadow: ${props => props.theme.boxShadow};
   position: fixed;
   width: 400px;
+  transition: ${props => props.theme.transition.ease};
 
   @media only screen and (max-width: 768px) {
     width: 100%;
-    transform: translateX(-125%);
+    transform: ${props =>
+      props.isOpen ? `translateX(0%)` : `translateX(-125%)`};
   }
 `;
 
@@ -40,7 +42,11 @@ const Copyright = styled.span`
   color: ${props => props.theme.colors.greyScales.medium};
 `;
 
-export const Menu = () => {
+type MenuProps = {
+  isOpen: boolean;
+};
+
+export const Menu: FC<MenuProps> = ({ isOpen }) => {
   return (
     <StyledMenu
       center
@@ -48,6 +54,7 @@ export const Menu = () => {
       justifyContent="space-between"
       column
       height="100vh"
+      isOpen={isOpen}
     >
       <FlexItem alignItems="center" column flex={6} box>
         <h1>Sander van Rijsoort 👋</h1>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { Menu } from "../Menu";
@@ -16,11 +16,15 @@ const Content = styled.div`
 `;
 
 export const Layout = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <Container fluid>
       <Row>
-        <Menu />
-        <Hamburger />
+        <Menu isOpen={isOpen} />
+        <Hamburger clickHandler={toggleMenu} />
         <Content>{children}</Content>
       </Row>
     </Container>

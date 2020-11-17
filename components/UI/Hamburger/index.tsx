@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 import { FlexBox } from "react-styled-flex";
@@ -13,18 +13,27 @@ const StyledHamburger = styled(FlexBox)`
   background-color: ${props => props.theme.colors.white};
   border-radius: ${props => props.theme.borderRadius.round};
   box-shadow: ${props => props.theme.boxShadow};
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Line = styled.span`
-  height: 5px;
+  height: ${props => props.theme.spacing.micro};
+  border-radius: ${props => props.theme.borderRadius.large};
   width: 35px;
   margin-bottom: ${props => props.theme.spacing.micro};
   background-color: ${props => props.theme.colors.primaryColor};
 `;
 
-export const Hamburger = () => {
+type HamburgerProps = {
+  clickHandler: () => void;
+};
+
+export const Hamburger: FC<HamburgerProps> = ({ clickHandler }) => {
   return (
-    <StyledHamburger center column>
+    <StyledHamburger center column onClick={clickHandler}>
       <Line />
       <Line />
       <Line />
