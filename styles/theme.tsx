@@ -44,7 +44,8 @@ const theme = {
     small: "1rem",
     medium: "2rem",
     large: "3rem"
-  }
+  },
+  menuWidth: "400px"
 };
 
 export const Theme = ({ children }) => (
