@@ -1,71 +1,71 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-@import "./variables";
+// @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+// @import "./variables";
 
-body,
-html,
-button,
-ul,
-li,
-input,
-textarea {
-  padding: 0;
-  margin: 0;
-  font-family: $main-font;
-}
+// body,
+// html,
+// button,
+// ul,
+// li,
+// input,
+// textarea {
+//   padding: 0;
+//   margin: 0;
+//   font-family: $main-font;
+// }
 
-h1,
-h2,
-h3 {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
+// h1,
+// h2,
+// h3 {
+//   margin-top: 0;
+//   margin-bottom: 20px;
+// }
 
-.projects {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
+// .projects {
+//   display: flex;
+//   justify-content: space-evenly;
+//   flex-wrap: wrap;
+// }
 
-.resume {
-  padding: 25px 75px;
-}
+// .resume {
+//   padding: 25px 75px;
+// }
 
-.contact {
-  display: flex;
-  padding: 50px 75px;
-  &__form {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-  }
-  &__cards {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-  }
-}
+// .contact {
+//   display: flex;
+//   padding: 50px 75px;
+//   &__form {
+//     display: flex;
+//     flex: 1;
+//     flex-direction: column;
+//   }
+//   &__cards {
+//     display: flex;
+//     flex: 1;
+//     flex-direction: column;
+//   }
+// }
 
-a {
-  text-decoration: none;
-  color: #6e6e6e;
-  transition: $transition;
-  &:hover {
-    color: $primary-color;
-  }
-}
+// a {
+//   text-decoration: none;
+//   color: #6e6e6e;
+//   transition: $transition;
+//   &:hover {
+//     color: $primary-color;
+//   }
+// }
 
-.fa-briefcase,
-.fa-graduation-cap,
-.fa-certificate {
-  margin-right: 15px;
-}
+// .fa-briefcase,
+// .fa-graduation-cap,
+// .fa-certificate {
+//   margin-right: 15px;
+// }
 
-//Animations
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// //Animations
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

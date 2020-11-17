@@ -22,6 +22,7 @@
     "react-styled-flex": "^1.0.19",
     "styled-bootstrap-grid": "^3.1.0",
     "styled-components": "^5.2.1",
+    "styled-sanitize": "^1.1.2",
     "yup": "^0.29.3"
   },
   "devDependencies": {

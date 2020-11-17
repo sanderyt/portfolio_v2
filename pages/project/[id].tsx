@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import { Layout } from "../../components/UI/Layout";
-import { ImageGallery } from "../../components/UI/ImageGallery";
 import { Container, Row, Col } from "styled-bootstrap-grid";
 
 const Project = () => {
@@ -43,7 +42,6 @@ const Project = () => {
               </div>
             )}
           </Col>
-          <Col>{project && <ImageGallery images={project.images} />}</Col>
         </Row>
       </Container>
     </Layout>

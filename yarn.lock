@@ -5371,6 +5371,11 @@ styled-jsx@3.2.5:
     stylis "3.5.4"
     stylis-rule-sheet "0.0.10"
 
+styled-sanitize@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/styled-sanitize/-/styled-sanitize-1.1.2.tgz#3037b12bdc0d3aa0c6842749902936e21b17ad3c"
+  integrity sha512-kqJPQK3smrj9mIMC/Sz1tLewzcc1RPtteVy5EiGvoTmG6gZMf6/mFyM89xIWmxsze4yZh70+13Ww/hr8qzH1Rw==
+
 stylis-rule-sheet@0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"

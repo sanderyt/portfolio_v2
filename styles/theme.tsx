@@ -17,7 +17,9 @@ const theme = {
     large: "5px"
   },
   boxShadow: "0 0 10px #adadad",
-  fonts: ["sans-serif", "Roboto"],
+  fonts: {
+    main: ["sans-serif", "Roboto"]
+  },
   fontSizes: {
     extraSmall: "0.75rem",
     small: "1rem",
@@ -26,8 +28,6 @@ const theme = {
   }
 };
 
-const Theme = ({ children }) => (
+export const Theme = ({ children }) => (
   <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
-
-export default Theme;

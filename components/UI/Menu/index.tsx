@@ -3,6 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 import { FlexBox } from "react-styled-flex";
+import { Button } from "../Button";
 
 const StyledMenu = styled.div`
   display: flex;
@@ -70,6 +71,7 @@ export const Menu = () => {
         <h2>React developer ⚛ </h2>
         <h3>Based in Amsterdam 🇳🇱</h3>
         <h3>Currently working remote in 🇵🇹</h3>
+        <Button>Get in touch</Button>
       </Top>
       <StyledNavigation>
         <Navigation>
@@ -82,8 +84,8 @@ export const Menu = () => {
           <Link href="/resume">
             <NavigationItem>Resume</NavigationItem>
           </Link>
-          <Link href="/about">
-            <NavigationItem>About</NavigationItem>
+          <Link href="/blog">
+            <NavigationItem>Blog</NavigationItem>
           </Link>
           <Link href="/contact">
             <NavigationItem>Contact</NavigationItem>
