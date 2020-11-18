@@ -17,7 +17,7 @@ const StyledThumb = styled(FlexItem)`
   width: 400px;
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius.large};
-  margin-top: 50px;
+  margin: ${props => props.theme.spacing.large};
   cursor: pointer;
   animation: fadeIn 1s forwards;
   transition: ${props => props.theme.transition.ease};

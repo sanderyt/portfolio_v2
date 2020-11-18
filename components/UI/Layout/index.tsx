@@ -26,7 +26,7 @@ export const Layout = ({ children }) => {
       <Row>
         <Menu isOpen={isOpen} />
         <Hamburger clickHandler={toggleMenu} isOpen={isOpen} />
-        <Content column center wrap>
+        <Content center wrap>
           {children}
         </Content>
       </Row>

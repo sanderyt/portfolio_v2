@@ -7,7 +7,6 @@ import { Layout } from "../components/UI/Layout";
 import { Thumb } from "../components/UI/Thumb";
 import { Header } from "../components/UI/Header";
 import { Project } from "../lib/types";
-import { title } from "process";
 
 type ProjectsProps = {
   projects: Project[];
