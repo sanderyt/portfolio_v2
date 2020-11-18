@@ -6,10 +6,10 @@ import { gql } from "graphql-request";
 import { Layout } from "../components/UI/Layout";
 import { Thumb } from "../components/UI/Thumb";
 import { Header } from "../components/UI/Header";
-import { Project } from "../lib/types";
+import { ProjectSchema } from "../lib/types";
 
 type ProjectsProps = {
-  projects: Project[];
+  projects: ProjectSchema[];
 };
 
 const Projects: FC<ProjectsProps> = ({ projects }) => {
@@ -36,6 +36,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
   const query = gql`
     query getProjects {
       projects {
+        id
         title
         slug
         tech

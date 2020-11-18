@@ -5,6 +5,7 @@ import { FlexBox } from "react-styled-flex";
 
 type HeaderProps = {
   title: string;
+  smallDescription?: string;
 };
 
 const StyledHeader = styled(FlexBox)`
@@ -12,10 +13,11 @@ const StyledHeader = styled(FlexBox)`
   height: 200px;
 `;
 
-export const Header: FC<HeaderProps> = ({ title }) => {
+export const Header: FC<HeaderProps> = ({ title, smallDescription }) => {
   return (
-    <StyledHeader width="100%" center>
+    <StyledHeader width="100%" center column>
       <h1>{title}</h1>
+      {smallDescription && <span>{smallDescription}</span>}
     </StyledHeader>
   );
 };

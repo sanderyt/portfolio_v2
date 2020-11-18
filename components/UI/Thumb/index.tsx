@@ -48,7 +48,7 @@ const Tech = styled.span``;
 
 export const Thumb: FC<ThumbProps> = ({ name, tech, slug, id, thumb }) => {
   return (
-    <Link href={`/project/${slug}`}>
+    <Link href={`/project/${id}`}>
       <StyledThumb center column box>
         <Image src={thumb} alt={name} />
         <Details column alignItems="center">

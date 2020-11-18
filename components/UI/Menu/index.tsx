@@ -108,8 +108,7 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
         </FlexBox>
       </FlexItem>
       <Footer box flex={1} column justifyContent="flex-end">
-        <Copyright>Theme made by me 🔨</Copyright>
-        <Copyright>The content is from an API also made by me 🚀</Copyright>
+        <Copyright>Theme made by me 🔨 code is here</Copyright>
       </Footer>
     </StyledMenu>
   );
