@@ -1,6 +1,7 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { FlexBox, FlexItem } from "react-styled-flex";
 import { Button } from "../Button";
@@ -12,6 +13,7 @@ const StyledMenu = styled(FlexBox)`
   position: fixed;
   width: 400px;
   transition: ${props => props.theme.transition.ease};
+  min-height: -webkit-fill-available;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -55,8 +57,11 @@ type MenuProps = {
 };
 
 export const Menu: FC<MenuProps> = ({ isOpen }) => {
+  const [height, setHeight] = useState(null);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
+    setHeight(window.innerHeight);
   }, [isOpen]);
 
   return (
@@ -65,18 +70,13 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
       alignItems="center"
       justifyContent="space-between"
       column
-      height="100vh"
       isOpen={isOpen}
+      height={height}
     >
       <FlexItem alignItems="center" column flex={6} box>
         <h1>Sander van Rijsoort 👋</h1>
         <h2>React developer ⚛ </h2>
         <h3>Based in Amsterdam 🇳🇱</h3>
-        <Link href="/contact">
-          <a>
-            <Button>Get in touch</Button>
-          </a>
-        </Link>
       </FlexItem>
       <FlexItem width="100%" flex={3}>
         <FlexBox width="100%" column>
@@ -108,7 +108,7 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
         </FlexBox>
       </FlexItem>
       <Footer box flex={1} column justifyContent="flex-end">
-        <Copyright>Theme made by me 🔨 code is here</Copyright>
+        <Copyright>Theme made by me from scratch 🔨</Copyright>
       </Footer>
     </StyledMenu>
   );

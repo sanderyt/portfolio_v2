@@ -9,7 +9,7 @@ type HeaderProps = {
 };
 
 const StyledHeader = styled(FlexBox)`
-  background-color: ${props => props.theme.colors.greyScales.light};
+  background-color: ${props => props.theme.colors.greyScales.veryLight};
   height: 200px;
 `;
 

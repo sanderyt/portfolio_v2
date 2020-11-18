@@ -7,6 +7,7 @@ import { ProjectSchema } from "../../lib/types";
 
 import { Layout } from "../../components/UI/Layout";
 import { Header } from "../../components/UI/Header";
+import { ProjectDetails } from "../../components/UI/ProjectDetails.tsx";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -29,6 +30,7 @@ const Project: FC<ProjectProps> = ({ project }) => {
         title={title}
         smallDescription={`This project was built using ${tech}`}
       />
+      <ProjectDetails />
       <Content dangerouslySetInnerHTML={createMarkup()}></Content>
     </Layout>
   );
