@@ -1,10 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { FlexBox, FlexItem } from "react-styled-flex";
-import { Button } from "../Button";
 
 const StyledMenu = styled(FlexBox)`
   z-index: ${props => props.theme.layers.layer2};
@@ -21,12 +19,6 @@ const StyledMenu = styled(FlexBox)`
       props.isOpen
         ? `translateY(0%) translateX(0%)`
         : `translateX(150%) translateY(-150%)`};
-  }
-
-  &:after {
-    width: 200%;
-    height: 100%;
-    background-color: red;
   }
 `;
 
@@ -57,11 +49,14 @@ type MenuProps = {
 };
 
 export const Menu: FC<MenuProps> = ({ isOpen }) => {
-  const [height, setHeight] = useState(null);
-
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
-    setHeight(window.innerHeight);
+    if (isOpen) {
+      document.body.classList.add("noScroll");
+      document.documentElement.classList.add("noScroll");
+    } else {
+      document.body.classList.remove("noScroll");
+      document.documentElement.classList.remove("noScroll");
+    }
   }, [isOpen]);
 
   return (
@@ -71,7 +66,6 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
       justifyContent="space-between"
       column
       isOpen={isOpen}
-      height={height}
     >
       <FlexItem alignItems="center" column flex={6} box>
         <h1>Sander van Rijsoort 👋</h1>

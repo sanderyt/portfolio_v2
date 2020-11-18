@@ -48,4 +48,10 @@ export const GlobalStyle = createGlobalStyle`
       margin-top: 40px;
     }
   }
+
+  .noScroll {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
 `;
