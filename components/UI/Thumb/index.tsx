@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
-import { FlexBox } from "react-styled-flex";
+import { FlexBox, FlexItem } from "react-styled-flex";
 
 type ThumbProps = {
   name: string;
@@ -12,7 +12,7 @@ type ThumbProps = {
   thumb: string;
 };
 
-const StyledThumb = styled(FlexBox)`
+const StyledThumb = styled(FlexItem)`
   height: auto;
   width: 400px;
   box-shadow: ${props => props.theme.boxShadow};
@@ -25,7 +25,7 @@ const StyledThumb = styled(FlexBox)`
 
 const Image = styled.img`
   width: 100%;
-  height: 100%;
+  height: 300px;
   border-radius: ${props => props.theme.borderRadius.large};
   object-fit: contain;
 `;
@@ -45,7 +45,7 @@ const Tech = styled.span``;
 export const Thumb: FC<ThumbProps> = ({ name, tech, slug, id, thumb }) => {
   return (
     <Link href={`/project/${slug}`}>
-      <StyledThumb center column>
+      <StyledThumb center column box>
         <Image src={thumb} alt={name} />
         <Details column alignItems="center">
           <Name>{name}</Name>

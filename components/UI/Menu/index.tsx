@@ -72,7 +72,6 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
         <h1>Sander van Rijsoort 👋</h1>
         <h2>React developer ⚛ </h2>
         <h3>Based in Amsterdam 🇳🇱</h3>
-        <h3>Currently working remote in 🇵🇹</h3>
         <Button>Get in touch</Button>
       </FlexItem>
       <FlexItem width="100%" flex={3}>
