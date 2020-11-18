@@ -51,11 +51,11 @@ type MenuProps = {
 export const Menu: FC<MenuProps> = ({ isOpen }) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add("noScroll");
-      document.documentElement.classList.add("noScroll");
+      document.body.classList.add("no-scroll");
+      document.documentElement.classList.add("no-scroll");
     } else {
-      document.body.classList.remove("noScroll");
-      document.documentElement.classList.remove("noScroll");
+      document.body.classList.remove("no-scroll");
+      document.documentElement.classList.remove("no-scroll");
     }
   }, [isOpen]);
 

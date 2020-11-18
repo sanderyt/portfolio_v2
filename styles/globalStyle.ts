@@ -49,9 +49,8 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .noScroll {
+  .no-scroll {
     overflow: hidden;
-    position: relative;
     height: 100%;
   }
 `;
