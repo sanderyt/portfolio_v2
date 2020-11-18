@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const StyledContactCard = styled.div`
   display: flex;
-  width: 400px;
+  width: 80%;
   cursor: pointer;
   margin-top: 25px;
   height: 75px;
