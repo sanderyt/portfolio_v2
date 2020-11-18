@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
-import { FlexBox, FlexItem } from "react-styled-flex";
+import { FlexBox } from "react-styled-flex";
 
 const StyledHamburger = styled(FlexBox)`
   width: 50px;

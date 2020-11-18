@@ -16,7 +16,15 @@ const StyledMenu = styled(FlexBox)`
   @media only screen and (max-width: 768px) {
     width: 100%;
     transform: ${props =>
-      props.isOpen ? `translateX(0%)` : `translateX(-125%)`};
+      props.isOpen
+        ? `translateY(0%) translateX(0%)`
+        : `translateX(150%) translateY(-150%)`};
+  }
+
+  &:after {
+    width: 200%;
+    height: 100%;
+    background-color: red;
   }
 `;
 
