@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -55,6 +55,10 @@ type MenuProps = {
 };
 
 export const Menu: FC<MenuProps> = ({ isOpen }) => {
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+  }, [isOpen]);
+
   return (
     <StyledMenu
       center
