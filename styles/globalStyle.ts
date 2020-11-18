@@ -37,8 +37,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #nprogress .spinner-icon {
-    margin-top: 40px;
     border-top-color: ${props => props.theme.colors.primaryColor} !important;
     border-left-color: ${props => props.theme.colors.primaryColor} !important;
+
+    @media only screen and (max-width: 768px) {
+      margin-top: 40px;
+    }
   }
 `;

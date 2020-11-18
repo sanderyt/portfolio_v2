@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styled from "styled-components";
 import { GetServerSideProps } from "next";
 import { gql } from "graphql-request";
 import { client } from "../../gql/gqlClient";
@@ -11,14 +12,24 @@ type ProjectProps = {
   project: ProjectSchema;
 };
 
+const Content = styled.div`
+  color: ${props => props.theme.colors.greyScales.text};
+  line-height: 1.75;
+  padding: ${props => props.theme.spacing.xl};
+`;
+
 const Project: FC<ProjectProps> = ({ project }) => {
   const { title, description, slug, tech, projectImages } = project;
+  function createMarkup() {
+    return { __html: description.html };
+  }
   return (
     <Layout>
       <Header
         title={title}
         smallDescription={`This project was built using ${tech}`}
       />
+      <Content dangerouslySetInnerHTML={createMarkup()}></Content>
     </Layout>
   );
 };

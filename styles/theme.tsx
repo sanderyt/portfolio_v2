@@ -11,7 +11,8 @@ const theme = {
       veryLight: "#fcfcfc",
       light: "#f7f7f7",
       medium: "#ccc",
-      darker: "#aaa"
+      darker: "#aaa",
+      text: "#808080"
     }
   },
   spacing: {
@@ -19,7 +20,8 @@ const theme = {
     normal: "8px",
     small: "16px",
     medium: "24px",
-    large: "32px"
+    large: "32px",
+    xl: "64px"
   },
   layers: {
     layer1: "1",

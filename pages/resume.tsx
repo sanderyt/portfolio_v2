@@ -5,16 +5,22 @@ import {
   faCertificate,
   faGraduationCap
 } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 
 import { Layout } from "../components/UI/Layout";
 import { Experience } from "../components/UI/Experience";
 import { Header } from "../components/UI/Header";
+import { FlexBox } from "react-styled-flex";
+
+const Content = styled(FlexBox)`
+  padding: ${props => props.theme.spacing.xl};
+`;
 
 const Resume = () => {
   return (
     <Layout>
       <Header title="Resume" />
-      <div className="resume">
+      <Content column>
         <h2>
           <FontAwesomeIcon icon={faBriefcase} />
           Experience
@@ -113,7 +119,7 @@ const Resume = () => {
           suscipit ipsam placeat libero. Deleniti exercitationem nostrum quasi.
           Molestiae, vel porro.
         </Experience>
-      </div>
+      </Content>
     </Layout>
   );
 };
