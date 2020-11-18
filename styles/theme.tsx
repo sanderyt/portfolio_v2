@@ -28,7 +28,7 @@ const theme = {
     layer4: "4"
   },
   transition: {
-    ease: "250ms"
+    ease: "all .3s ease"
   },
   borderRadius: {
     small: "1px",

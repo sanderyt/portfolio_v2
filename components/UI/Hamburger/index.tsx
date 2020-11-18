@@ -25,30 +25,37 @@ const Line = styled.span`
   margin-bottom: ${props => props.theme.spacing.micro};
   background-color: ${props => props.theme.colors.primaryColor};
   border-radius: ${props => props.theme.borderRadius.small};
+  transition: ${props => props.theme.transition.ease};
 `;
 
 const TopLine = styled(Line)`
-  width: 12px;
+  width: ${props => (props.isOpen ? `24px` : `12px`)};
+  transform: ${props => props.isOpen && `rotate(45deg) translateY(-2px)`};
+  transform-origin: ${props => props.isOpen && `0 50%`};
 `;
 
 const MiddleLine = styled(Line)`
-  width: 24px;
+  width: ${props => (props.isOpen ? `0` : `24px`)};
+  opacity: ${props => (props.isOpen ? `0` : `1`)};
 `;
 
 const BottomLine = styled(Line)`
-  width: 17px;
+  width: ${props => (props.isOpen ? `24px` : `12px`)};
+  transform: ${props => props.isOpen && `rotate(-45deg) translateY(2px)`};
+  transform-origin: ${props => props.isOpen && `0 50%`};
 `;
 
 type HamburgerProps = {
   clickHandler: () => void;
+  isOpen: boolean;
 };
 
-export const Hamburger: FC<HamburgerProps> = ({ clickHandler }) => {
+export const Hamburger: FC<HamburgerProps> = ({ clickHandler, isOpen }) => {
   return (
     <StyledHamburger justifyContent="center" column onClick={clickHandler}>
-      <TopLine />
-      <MiddleLine />
-      <BottomLine />
+      <TopLine isOpen={isOpen} />
+      <MiddleLine isOpen={isOpen} />
+      <BottomLine isOpen={isOpen} />
     </StyledHamburger>
   );
 };

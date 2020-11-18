@@ -24,7 +24,7 @@ export const Layout = ({ children }) => {
     <Container fluid>
       <Row>
         <Menu isOpen={isOpen} />
-        <Hamburger clickHandler={toggleMenu} />
+        <Hamburger clickHandler={toggleMenu} isOpen={isOpen} />
         <Content>{children}</Content>
       </Row>
     </Container>
