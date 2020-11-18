@@ -31,4 +31,14 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: ${props => props.theme.fonts.heading[0]}
   }
+
+  #nprogress .bar {
+  background: ${props => props.theme.colors.primaryColor} !important;
+  }
+
+  #nprogress .spinner-icon {
+    margin-top: 40px;
+    border-top-color: ${props => props.theme.colors.primaryColor} !important;
+    border-left-color: ${props => props.theme.colors.primaryColor} !important;
+  }
 `;

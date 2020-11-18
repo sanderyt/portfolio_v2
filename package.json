@@ -19,6 +19,7 @@
     "next": "9.3.4",
     "next-plugin-graphql": "^0.0.2",
     "node-sass": "^4.13.1",
+    "nprogress": "^0.2.0",
     "polished": "^4.0.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",

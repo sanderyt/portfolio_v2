@@ -9,7 +9,7 @@ const Blog = () => {
     <Layout>
       <Header title="Blog" />
       <FlexBox center>
-        <h2>Working on the first article...</h2>
+        <h2>Still have to work on the first article... 🙈</h2>
       </FlexBox>
     </Layout>
   );
