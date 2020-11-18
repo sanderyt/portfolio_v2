@@ -13,7 +13,7 @@ const StyledHamburger = styled(FlexBox)`
   padding-top: 5px;
   z-index: ${props => props.theme.layers.layer4};
   background-color: ${props => props.theme.colors.white};
-  box-shadow: ${props => props.theme.boxShadow};
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
   @media only screen and (min-width: 768px) {
     display: none;
