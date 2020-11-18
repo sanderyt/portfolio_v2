@@ -21,13 +21,17 @@ const StyledThumb = styled(FlexItem)`
   cursor: pointer;
   animation: fadeIn 1s forwards;
   transition: ${props => props.theme.transition.ease};
+
+  &:hover {
+    transform: translateY(-2%);
+  }
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 300px;
   border-radius: ${props => props.theme.borderRadius.large};
-  object-fit: contain;
+  object-fit: cover;
 `;
 
 const Details = styled(FlexBox)`
