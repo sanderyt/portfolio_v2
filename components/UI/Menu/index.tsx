@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { FlexBox, FlexItem } from "react-styled-flex";
 
 const StyledMenu = styled(FlexBox)`
-  z-index: ${props => props.theme.layers.layer2};
+  z-index: ${props => props.theme.layers.layer3};
   background-color: ${props => props.theme.colors.greyScales.veryLight};
   box-shadow: ${props => props.theme.boxShadow};
   position: fixed;
@@ -50,7 +50,9 @@ type MenuProps = {
 
 export const Menu: FC<MenuProps> = ({ isOpen }) => {
   useEffect(() => {
-    isOpen ? addNoScroll() : removeNoScroll();
+    isOpen
+      ? setTimeout(() => addNoScroll(), 500)
+      : setTimeout(() => removeNoScroll(), 500);
   }, [isOpen]);
 
   const addNoScroll = () => {
