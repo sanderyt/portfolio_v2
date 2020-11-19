@@ -12,6 +12,7 @@ const StyledMenu = styled(FlexBox)`
   width: 400px;
   transition: ${props => props.theme.transition.ease};
   min-height: -webkit-fill-available;
+  overflow: hidden;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
