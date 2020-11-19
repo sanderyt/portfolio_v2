@@ -51,10 +51,9 @@ export const GlobalStyle = createGlobalStyle`
 
   .no-scroll {
     overflow: hidden;
-    position: fixed;
+    position: static;
     width: 100%;
-    /* top: attr(scrollPosition); */
-    top: 0;
+    top: attr(scrollPosition);
     z-index: ${props => props.theme.layers.layer2};
   }
 `;
