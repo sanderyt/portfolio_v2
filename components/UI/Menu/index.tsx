@@ -51,7 +51,7 @@ type MenuProps = {
 
 export const Menu: FC<MenuProps> = ({ isOpen }) => {
   useEffect(() => {
-    isOpen ? addNoScroll() : removeNoScroll();
+    isOpen ? setTimeout(() => addNoScroll(), 200) : removeNoScroll();
   }, [isOpen]);
 
   const addNoScroll = () => {
