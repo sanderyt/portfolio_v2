@@ -53,5 +53,6 @@ export const GlobalStyle = createGlobalStyle`
     overflow: unset;
     position: fixed;
     width: 100%;
+    top: attr(scrollPosition);
   }
 `;
