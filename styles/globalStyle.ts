@@ -51,8 +51,8 @@ export const GlobalStyle = createGlobalStyle`
 
   .no-scroll {
     overflow: hidden;
-    position: fixed;
-    width: 100%;
+    position: relative;
+    height: 100%;
     top: attr(scrollPosition);
     z-index: ${props => props.theme.layers.layer2};
   }
