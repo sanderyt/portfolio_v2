@@ -4,9 +4,20 @@ export type ProjectSchema = {
   description: {
     html: string;
   };
-  tech: string;
+  tech: string[];
   slug: string;
   projectImages: {
     url: string[] | string;
   };
+};
+
+export type ResumeSchema = {
+  title: string;
+  type: string;
+  organisation: string;
+  description: {
+    html: string;
+  };
+  startDate: string;
+  endDate: string;
 };

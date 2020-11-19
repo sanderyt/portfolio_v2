@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { GetServerSideProps } from "next";
-import { client } from "../../gql/gqlClient";
+import { client } from "../../api/gqlClient";
 import { ProjectSchema } from "../../lib/types";
-import { getSingleProject } from "../../gql/queries";
+import { getSingleProject } from "../../api/queries";
 
 import { Layout } from "../../components/UI/Layout";
 import { Header } from "../../components/UI/Header";

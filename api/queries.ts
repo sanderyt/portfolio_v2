@@ -5,6 +5,9 @@ export const getSingleProject = gql`
     project(where: { id: $id }) {
       id
       title
+      url
+      startDate
+      endDate
       slug
       tech
       description {
@@ -22,6 +25,9 @@ export const getProjects = gql`
     projects {
       id
       title
+      url
+      startDate
+      endDate
       slug
       tech
       description {
@@ -30,6 +36,21 @@ export const getProjects = gql`
       projectImages {
         url
       }
+    }
+  }
+`;
+
+export const getResume = gql`
+  query getResume {
+    resumes {
+      title
+      type
+      organisation
+      description {
+        html
+      }
+      startDate
+      endDate
     }
   }
 `;

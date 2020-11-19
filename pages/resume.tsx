@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBriefcase,
@@ -6,17 +6,27 @@ import {
   faGraduationCap
 } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import { FlexBox } from "react-styled-flex";
+import { GetServerSideProps } from "next";
+import { client } from "../api/gqlClient";
 
 import { Layout } from "../components/UI/Layout";
 import { Experience } from "../components/UI/Experience";
 import { Header } from "../components/UI/Header";
-import { FlexBox } from "react-styled-flex";
+import { getResume } from "../api/queries";
+import { ResumeSchema } from "../lib/types";
 
 const Content = styled(FlexBox)`
   padding: ${props => props.theme.spacing.xl};
 `;
 
-const Resume = () => {
+type ResumeProps = {
+  work: ResumeSchema[];
+  certificates: ResumeSchema[];
+  education: ResumeSchema[];
+};
+
+const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
   return (
     <Layout>
       <Header title="Resume" />
@@ -25,103 +35,27 @@ const Resume = () => {
           <FontAwesomeIcon icon={faBriefcase} />
           Experience
         </h2>
-        <Experience
-          title="Front-end developer"
-          company="Incentro"
-          date="2019 - now"
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, magni
-          mollitia, aspernatur consequatur accusamus vero eum facere
-          exercitationem velit suscipit ipsam placeat libero. Deleniti
-          exercitationem nostrum quasi. Molestiae, vel porro.Lorem ipsum dolor
-          sit amet consectetur, adipisicing elit. Quas, magni mollitia,
-          aspernatur consequatur accusamus vero eum facere exercitationem velit
-          suscipit ipsam placeat libero. Deleniti exercitationem nostrum quasi.
-          Molestiae, vel porro.
-        </Experience>
-        <Experience
-          title="Internet entrepreneur"
-          company="Sanvar"
-          date="2014 - now"
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, magni
-          mollitia, aspernatur consequatur accusamus vero eum facere
-          exercitationem velit suscipit ipsam placeat libero. Deleniti
-          exercitationem nostrum quasi. Molestiae, vel porro.Lorem ipsum dolor
-          sit amet consectetur, adipisicing elit. Quas, magni mollitia,
-          aspernatur consequatur accusamus vero eum facere exercitationem velit
-          suscipit ipsam placeat libero. Deleniti exercitationem nostrum quasi.
-          Molestiae, vel porro.
-        </Experience>
-        <h2>
-          {" "}
-          <FontAwesomeIcon icon={faCertificate} />
-          Certificates
-        </h2>
-        <Experience
-          title="Advanced React Training"
-          company="React/GraphQL Academy"
-          date="May 2020"
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, magni
-          mollitia, aspernatur consequatur accusamus vero eum facere
-          exercitationem velit suscipit ipsam placeat libero. Deleniti
-          exercitationem nostrum quasi. Molestiae, vel porro.Lorem ipsum dolor
-          sit amet consectetur, adipisicing elit. Quas, magni mollitia,
-          aspernatur consequatur accusamus vero eum facere exercitationem velit
-          suscipit ipsam placeat libero. Deleniti exercitationem nostrum quasi.
-          Molestiae, vel porro.
-          <button className="btn btn--primary">Check certificate</button>
-        </Experience>
-        <Experience
-          title="Young Professional Academy"
-          company="Incentro Nederland"
-          date="Nov 2019"
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, magni
-          mollitia, aspernatur consequatur accusamus vero eum facere
-          exercitationem velit suscipit ipsam placeat libero. Deleniti
-          exercitationem nostrum quasi. Molestiae, vel porro.Lorem ipsum dolor
-          sit amet consectetur, adipisicing elit. Quas, magni mollitia,
-          aspernatur consequatur accusamus vero eum facere exercitationem velit
-          suscipit ipsam placeat libero. Deleniti exercitationem nostrum quasi.
-          Molestiae, vel porro.
-        </Experience>
-        <h2>
-          <FontAwesomeIcon icon={faGraduationCap} />
-          Education
-        </h2>
-        <Experience
-          title="MSc Strategic Entrepreneurship"
-          company="Erasmus University Rotterdam"
-          date="2017 - 2018"
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, magni
-          mollitia, aspernatur consequatur accusamus vero eum facere
-          exercitationem velit suscipit ipsam placeat libero. Deleniti
-          exercitationem nostrum quasi. Molestiae, vel porro.Lorem ipsum dolor
-          sit amet consectetur, adipisicing elit. Quas, magni mollitia,
-          aspernatur consequatur accusamus vero eum facere exercitationem velit
-          suscipit ipsam placeat libero. Deleniti exercitationem nostrum quasi.
-          Molestiae, vel porro.
-        </Experience>
-        <Experience
-          title="BSc Business Administration"
-          company="Erasmus University Rotterdam"
-          date="2011 - 2016"
-        >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas, magni
-          mollitia, aspernatur consequatur accusamus vero eum facere
-          exercitationem velit suscipit ipsam placeat libero. Deleniti
-          exercitationem nostrum quasi. Molestiae, vel porro.Lorem ipsum dolor
-          sit amet consectetur, adipisicing elit. Quas, magni mollitia,
-          aspernatur consequatur accusamus vero eum facere exercitationem velit
-          suscipit ipsam placeat libero. Deleniti exercitationem nostrum quasi.
-          Molestiae, vel porro.
-        </Experience>
       </Content>
     </Layout>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async ctx => {
+  const { resumes } = await client.request(getResume);
+
+  const work = resumes.filter(element => element.type === "Work");
+  const certificates = resumes.filter(
+    element => element.type === "Certifications"
+  );
+  const education = resumes.filter(element => element.type === "Education");
+
+  return {
+    props: {
+      work,
+      certificates,
+      education
+    }
+  };
 };
 
 export default Resume;

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { GetServerSideProps } from "next";
-import { client } from "../gql/gqlClient";
-import { getProjects } from "../gql/queries";
+import { client } from "../api/gqlClient";
+import { getProjects } from "../api/queries";
 
 import { Layout } from "../components/UI/Layout";
 import { Thumb } from "../components/UI/Thumb";
@@ -18,12 +18,13 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
       <Header title="Projects" />
       {projects.map(project => {
         const { title, id, slug, tech } = project;
+        console.log(tech, "tech");
         return (
           <Thumb
             name={title}
             id={id}
             slug={slug}
-            tech={tech}
+            tech="tech"
             thumb={project.projectImages.url as string}
           />
         );
