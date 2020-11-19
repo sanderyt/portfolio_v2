@@ -7,7 +7,7 @@ import { Button } from "../Button";
 type HeaderProps = {
   title: string;
   smallDescription?: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const StyledHeader = styled(FlexBox)`

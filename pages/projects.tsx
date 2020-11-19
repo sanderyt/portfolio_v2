@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { GetServerSideProps } from "next";
 import { client } from "../gql/gqlClient";
-import { gql } from "graphql-request";
+import { getProjects } from "../gql/queries";
 
 import { Layout } from "../components/UI/Layout";
 import { Thumb } from "../components/UI/Thumb";
@@ -33,23 +33,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
-  const query = gql`
-    query getProjects {
-      projects {
-        id
-        title
-        slug
-        tech
-        description {
-          html
-        }
-        projectImages {
-          url
-        }
-      }
-    }
-  `;
-  const { projects } = await client.request(query);
+  const { projects } = await client.request(getProjects);
   return {
     props: {
       projects

@@ -1,15 +1,13 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { GetServerSideProps } from "next";
-import { gql } from "graphql-request";
 import { client } from "../../gql/gqlClient";
 import { ProjectSchema } from "../../lib/types";
+import { getSingleProject } from "../../gql/queries";
 
 import { Layout } from "../../components/UI/Layout";
 import { Header } from "../../components/UI/Header";
-import { ProjectDetails } from "../../components/UI/ProjectDetails.tsx";
 import { Button } from "../../components/UI/Button";
-import Link from "next/link";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -41,28 +39,12 @@ const Project: FC<ProjectProps> = ({ project }) => {
 
 export const getServerSideProps: GetServerSideProps = async ctx => {
   const { id } = ctx.query;
-  const query = gql`
-    query getSingleProject($id: ID!) {
-      project(where: { id: $id }) {
-        id
-        title
-        slug
-        tech
-        description {
-          html
-        }
-        projectImages {
-          url
-        }
-      }
-    }
-  `;
 
   const variables = {
     id
   };
 
-  const { project } = await client.request(query, variables);
+  const { project } = await client.request(getSingleProject, variables);
   return {
     props: {
       project
