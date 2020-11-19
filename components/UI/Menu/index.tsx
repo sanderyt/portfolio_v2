@@ -55,26 +55,13 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
   }, [isOpen]);
 
   const addNoScroll = () => {
-    //To make it work for Safari mobile
-    const scrollPosition = window.pageYOffset;
-
     document.body.classList.add("no-scroll");
-    document.body.setAttribute("scrollPosition", `${scrollPosition}`);
-
     document.documentElement.classList.add("no-scroll");
-    document.documentElement.setAttribute(
-      "scrollPosition",
-      `${scrollPosition}`
-    );
   };
 
   const removeNoScroll = () => {
     document.body.classList.remove("no-scroll");
     document.documentElement.classList.remove("no-scroll");
-
-    const scrollPosition = document.body.getAttribute("scrollPosition");
-
-    window.scrollTo(0, parseInt(scrollPosition));
   };
 
   return (
