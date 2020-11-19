@@ -53,6 +53,7 @@ export const GlobalStyle = createGlobalStyle`
     overflow: hidden;
     position: fixed;
     width: 100%;
-    top: attr(windowHeight);
+    top: attr(scrollPosition);
+    z-index: ${props => props.theme.layers.layer2};
   }
 `;
