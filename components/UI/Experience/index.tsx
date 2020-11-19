@@ -11,6 +11,7 @@ type ExperienceProps = {
 const StyledExperience = styled.div`
   display: flex;
   animation: fadeIn 1s forwards;
+  margin: ${props => props.theme.spacing.medium} 0;
 `;
 
 const Timeline = styled.div`
@@ -22,16 +23,22 @@ const Timeline = styled.div`
   justify-content: center;
   padding-bottom: 60px;
   position: relative;
+  min-width: 80px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: ${props => props.theme.fontSizes.extraSmall};
+  }
+
   &:before {
     content: "";
     position: absolute;
-    left: -9px;
-    top: 6px;
-    height: 10px;
-    width: 10px;
+    left: -8px;
+    top: -2px;
+    height: 15px;
+    width: 15px;
     border-radius: 100px;
     background-color: white;
-    border: 3px solid ${props => `${props.theme.colors.primaryColor}`};
+    border: 4px solid ${props => `${props.theme.colors.primaryColor}`};
   }
 `;
 
@@ -58,6 +65,7 @@ const Company = styled.span`
 
 const Description = styled.span`
   line-height: 1.5;
+  color: ${props => props.theme.colors.greyScales.text};
 `;
 
 export const Experience: FC<ExperienceProps> = ({

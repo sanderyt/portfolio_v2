@@ -18,6 +18,10 @@ import { ResumeSchema } from "../lib/types";
 
 const Content = styled(FlexBox)`
   padding: ${props => props.theme.spacing.xl};
+
+  @media only screen and (max-width: 768px) {
+    padding: ${props => props.theme.spacing.small};
+  }
 `;
 
 type ResumeProps = {
@@ -35,6 +39,56 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           <FontAwesomeIcon icon={faBriefcase} />
           Experience
         </h2>
+        {work.map(work => {
+          function createMarkup() {
+            return { __html: work.description.html };
+          }
+          return (
+            <Experience
+              company={work.organisation}
+              date={work.startDate}
+              title={work.title}
+            >
+              <div dangerouslySetInnerHTML={createMarkup()}></div>
+            </Experience>
+          );
+        })}
+        <h2>
+          <FontAwesomeIcon icon={faCertificate} />
+          Certificates
+        </h2>
+        {certificates.map(work => {
+          function createMarkup() {
+            return { __html: work.description.html };
+          }
+          return (
+            <Experience
+              company={work.organisation}
+              date={work.startDate}
+              title={work.title}
+            >
+              <div dangerouslySetInnerHTML={createMarkup()}></div>
+            </Experience>
+          );
+        })}
+        <h2>
+          <FontAwesomeIcon icon={faGraduationCap} />
+          Education
+        </h2>
+        {education.map(work => {
+          function createMarkup() {
+            return { __html: work.description.html };
+          }
+          return (
+            <Experience
+              company={work.organisation}
+              date={work.startDate}
+              title={work.title}
+            >
+              <div dangerouslySetInnerHTML={createMarkup()}></div>
+            </Experience>
+          );
+        })}
       </Content>
     </Layout>
   );
