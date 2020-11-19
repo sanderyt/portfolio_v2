@@ -51,6 +51,8 @@ export const GlobalStyle = createGlobalStyle`
 
   .no-scroll {
     overflow: hidden;
-    height: 100%;
+    position: fixed;
+    width: 100%;
+    top: attr(windowHeight);
   }
 `;
