@@ -8,6 +8,8 @@ import { ProjectSchema } from "../../lib/types";
 import { Layout } from "../../components/UI/Layout";
 import { Header } from "../../components/UI/Header";
 import { ProjectDetails } from "../../components/UI/ProjectDetails.tsx";
+import { Button } from "../../components/UI/Button";
+import Link from "next/link";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -29,8 +31,9 @@ const Project: FC<ProjectProps> = ({ project }) => {
       <Header
         title={title}
         smallDescription={`This project was built using ${tech}`}
-      />
-      <ProjectDetails />
+      >
+        <Button>Live in production</Button>
+      </Header>
       <Content dangerouslySetInnerHTML={createMarkup()}></Content>
     </Layout>
   );

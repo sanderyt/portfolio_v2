@@ -11,6 +11,7 @@ const StyledButton = styled.button`
   border: none;
   outline: none;
   padding: 12px 24px;
+  height: 48px;
   cursor: pointer;
   font-weight: bold;
   font-size: ${props => `${props.theme.fontSizes.small}`};
