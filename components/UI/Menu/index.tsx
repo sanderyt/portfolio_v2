@@ -87,7 +87,7 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
       <FlexItem alignItems="center" column flex={6} box>
         <h1>Sander van Rijsoort 👋</h1>
         <h2>React developer ⚛ </h2>
-        <h3>Based in Amsterdam 🇳🇱 🚲 </h3>
+        <h3>Based in Amsterdam 🇳🇱</h3>
       </FlexItem>
       <FlexItem width="100%" flex={3}>
         <FlexBox width="100%" column>
