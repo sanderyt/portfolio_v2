@@ -21,13 +21,28 @@ const Content = styled.div`
 `;
 
 const Project: FC<ProjectProps> = ({ project }) => {
-  const { title, description, slug, tech, projectImages, url } = project;
+  const {
+    title,
+    description,
+    slug,
+    tech,
+    projectImages,
+    url,
+    startDate,
+    endDate
+  } = project;
   function createMarkup() {
     return { __html: description.html };
   }
   return (
     <Layout>
-      <ProjectHeader title={title} url={url} technologies={tech} />
+      <ProjectHeader
+        title={title}
+        url={url}
+        technologies={tech}
+        startDate={startDate}
+        endDate={endDate}
+      />
       <Content dangerouslySetInnerHTML={createMarkup()}></Content>
     </Layout>
   );

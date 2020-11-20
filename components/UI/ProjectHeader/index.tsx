@@ -1,16 +1,19 @@
 import React, { FC } from "react";
+import Link from "next/link";
 import styled from "styled-components";
-
+import moment from "moment";
 import { Col, Row, Container } from "styled-bootstrap-grid";
 import { FlexBox } from "react-styled-flex";
+
 import { Button } from "../Button";
-import Link from "next/link";
 import { Pill } from "../../Pill";
 
 type ProjectHeaderProps = {
   title: string;
   url: string;
   technologies: string[];
+  startDate: string;
+  endDate: string;
 };
 
 const StyledContainer = styled(Container)`
@@ -24,7 +27,9 @@ const Title = styled.h1`
 export const ProjectHeader: FC<ProjectHeaderProps> = ({
   title,
   url,
-  technologies
+  technologies,
+  startDate,
+  endDate
 }) => {
   return (
     <StyledContainer fluid>
@@ -38,7 +43,13 @@ export const ProjectHeader: FC<ProjectHeaderProps> = ({
                 return <Pill>{technology}</Pill>;
               })}
             </FlexBox>
-            <span>Date worked on</span>
+            <FlexBox column>
+              <span>Date worked on</span>
+              <span>
+                {moment(startDate).format("DD MMMM, YYYY")} -{" "}
+                {moment(endDate).format("DD MMMM, YYYY")}{" "}
+              </span>
+            </FlexBox>
           </FlexBox>
         </Col>
         <Col lg={6} md={12}>

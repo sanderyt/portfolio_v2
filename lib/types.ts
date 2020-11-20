@@ -2,6 +2,8 @@ export type ProjectSchema = {
   id: number;
   title: string;
   url: string;
+  startDate: string;
+  endDate: string;
   description: {
     html: string;
   };
