@@ -1,6 +1,7 @@
 export type ProjectSchema = {
   id: number;
   title: string;
+  url: string;
   description: {
     html: string;
   };

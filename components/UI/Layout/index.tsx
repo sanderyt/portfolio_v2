@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FlexBox } from "react-styled-flex";
+import { device } from "../../../styles/device";
 
 import { Menu } from "../Menu";
 import { Container, Row } from "styled-bootstrap-grid";
@@ -10,9 +11,10 @@ const Content = styled(FlexBox)`
   width: calc(100% - 400px);
   position: absolute;
   right: 0;
+  width: 100%;
 
-  @media only screen and (max-width: 768px) {
-    width: 100%;
+  @media ${device.laptop} {
+    width: calc(100% - 400px);
   }
 `;
 

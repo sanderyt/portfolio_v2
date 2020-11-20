@@ -8,6 +8,7 @@ import { getSingleProject } from "../../api/queries";
 import { Layout } from "../../components/UI/Layout";
 import { Header } from "../../components/UI/Header";
 import { Button } from "../../components/UI/Button";
+import { ProjectHeader } from "../../components/UI/ProjectHeader";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -20,18 +21,13 @@ const Content = styled.div`
 `;
 
 const Project: FC<ProjectProps> = ({ project }) => {
-  const { title, description, slug, tech, projectImages } = project;
+  const { title, description, slug, tech, projectImages, url } = project;
   function createMarkup() {
     return { __html: description.html };
   }
   return (
     <Layout>
-      <Header
-        title={title}
-        smallDescription={`This project was built using ${tech}`}
-      >
-        <Button>Live in production</Button>
-      </Header>
+      <ProjectHeader title={title} url={url} technologies={tech} />
       <Content dangerouslySetInnerHTML={createMarkup()}></Content>
     </Layout>
   );
