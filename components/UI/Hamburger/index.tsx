@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { device } from "../../../styles/device";
 
 import { FlexBox } from "react-styled-flex";
 
@@ -13,9 +14,9 @@ const StyledHamburger = styled(FlexBox)`
   padding-top: 5px;
   z-index: ${props => props.theme.layers.layer4};
   background-color: ${props => props.theme.colors.white};
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: ${props => props.theme.borders.thinLine};
 
-  @media only screen and (min-width: 768px) {
+  @media ${device.laptop} {
     display: none;
   }
 `;

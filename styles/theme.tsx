@@ -38,6 +38,9 @@ const theme = {
     large: "5px",
     round: "50%"
   },
+  borders: {
+    thinLine: "1px solid rgba(0, 0, 0, 0.1)"
+  },
   boxShadow: "0 0 10px #adadad",
   fonts: {
     main: ["WorkSans", "sans-serif"],

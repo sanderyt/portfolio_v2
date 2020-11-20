@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
+import { device } from "../../../styles/device";
 
 type ExperienceProps = {
   children: ReactNode;
@@ -24,9 +25,10 @@ const Timeline = styled.div`
   padding-bottom: 60px;
   position: relative;
   min-width: 80px;
+  font-size: ${props => props.theme.fontSizes.extraSmall};
 
-  @media only screen and (max-width: 768px) {
-    font-size: ${props => props.theme.fontSizes.extraSmall};
+  @media ${device.laptopL} {
+    font-size: ${props => props.theme.fontSizes.small};
   }
 
   &:before {
@@ -36,7 +38,7 @@ const Timeline = styled.div`
     top: -2px;
     height: 15px;
     width: 15px;
-    border-radius: 100px;
+    border-radius: ${props => props.theme.borderRadius.round};
     background-color: white;
     border: 4px solid ${props => `${props.theme.colors.primaryColor}`};
   }
