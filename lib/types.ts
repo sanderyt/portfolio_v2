@@ -15,6 +15,7 @@ export type ProjectSchema = {
 };
 
 export type ResumeSchema = {
+  id: string;
   title: string;
   type: string;
   organisation: string;

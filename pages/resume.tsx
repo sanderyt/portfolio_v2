@@ -49,6 +49,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
               startDate={work.startDate}
               endDate={work.endDate}
               title={work.title}
+              key={work.id}
             >
               <div dangerouslySetInnerHTML={createMarkup()}></div>
             </Experience>
@@ -68,6 +69,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
               startDate={work.startDate}
               endDate={work.endDate}
               title={work.title}
+              key={work.id}
             >
               <div dangerouslySetInnerHTML={createMarkup()}></div>
             </Experience>
@@ -87,6 +89,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
               startDate={work.startDate}
               endDate={work.endDate}
               title={work.title}
+              key={work.id}
             >
               <div dangerouslySetInnerHTML={createMarkup()}></div>
             </Experience>

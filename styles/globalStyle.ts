@@ -55,4 +55,15 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     top: attr(scrollPosition);
   }
+  
+  a {
+    color: ${props => props.theme.colors.primaryColor};
+    text-decoration: none;
+    transition: ${props => props.theme.transition.ease};
+    font-weight: bold;
+
+    &:hover {
+      color: ${props => props.theme.colors.greyScales.text};
+    }
+  }
 `;

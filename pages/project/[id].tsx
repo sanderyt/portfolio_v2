@@ -9,6 +9,7 @@ import { Layout } from "../../components/UI/Layout";
 import { Header } from "../../components/UI/Header";
 import { Button } from "../../components/UI/Button";
 import { ProjectHeader } from "../../components/UI/ProjectHeader";
+import { ProjectImage } from "../../components/UI/ProjectImage";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -44,6 +45,7 @@ const Project: FC<ProjectProps> = ({ project }) => {
         endDate={endDate}
       />
       <Content dangerouslySetInnerHTML={createMarkup()}></Content>
+      <ProjectImage url={projectImages.url as string} />
     </Layout>
   );
 };

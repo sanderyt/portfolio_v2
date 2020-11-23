@@ -3,6 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 import { FlexBox, FlexItem } from "react-styled-flex";
+import { fadeIn } from "../../../styles/keyframes";
 
 type ThumbProps = {
   name: string;
@@ -13,13 +14,13 @@ type ThumbProps = {
 };
 
 const StyledThumb = styled(FlexItem)`
+  animation: ${fadeIn} 1s forwards;
   height: auto;
   width: 400px;
   box-shadow: ${props => props.theme.boxShadow};
   border-radius: ${props => props.theme.borderRadius.large};
   margin: ${props => props.theme.spacing.large};
   cursor: pointer;
-  animation: fadeIn 1s forwards;
   transition: ${props => props.theme.transition.ease};
 
   &:hover {

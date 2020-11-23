@@ -43,6 +43,7 @@ export const getProjects = gql`
 export const getResume = gql`
   query getResume {
     resumes {
+      id
       title
       type
       organisation
