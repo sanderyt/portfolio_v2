@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
+require("dotenv").config();
 
-const endpoint =
-  "https://api-eu-central-1.graphcms.com/v2/ckhme4sza59pa01whgdli6slc/master";
+const endpoint = process.env.GRAPHCMS_ENDPOINT;
 
 export const client = new GraphQLClient(endpoint, { headers: {} });

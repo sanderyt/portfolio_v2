@@ -2,7 +2,6 @@ import { Theme } from "../styles/theme";
 import { GlobalStyle } from "../styles/globalStyle";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-import "react-image-gallery/styles/css/image-gallery.css";
 import Router from "next/router";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
