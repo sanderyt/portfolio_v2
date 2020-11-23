@@ -46,7 +46,8 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           return (
             <Experience
               company={work.organisation}
-              date={work.startDate}
+              startDate={work.startDate}
+              endDate={work.endDate}
               title={work.title}
             >
               <div dangerouslySetInnerHTML={createMarkup()}></div>
@@ -64,7 +65,8 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           return (
             <Experience
               company={work.organisation}
-              date={work.startDate}
+              startDate={work.startDate}
+              endDate={work.endDate}
               title={work.title}
             >
               <div dangerouslySetInnerHTML={createMarkup()}></div>
@@ -82,7 +84,8 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           return (
             <Experience
               company={work.organisation}
-              date={work.startDate}
+              startDate={work.startDate}
+              endDate={work.endDate}
               title={work.title}
             >
               <div dangerouslySetInnerHTML={createMarkup()}></div>

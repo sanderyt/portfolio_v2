@@ -1,28 +1,29 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
+import moment from "moment";
 import { device } from "../../../styles/device";
+import { fadeIn } from "../../../styles/keyframes";
+
+import { FlexBox, FlexItem } from "react-styled-flex";
 
 type ExperienceProps = {
   children: ReactNode;
-  date: string;
+  startDate: string;
+  endDate: string;
   title: string;
   company: string;
 };
 
-const StyledExperience = styled.div`
-  display: flex;
-  animation: fadeIn 1s forwards;
+const StyledExperience = styled(FlexBox)`
+  animation: ${fadeIn} 1s forwards;
   margin: ${props => props.theme.spacing.medium} 0;
 `;
 
-const Timeline = styled.div`
-  display: flex;
-  flex: 1;
-  color: #bfbfbf;
-  padding-top: 6px;
+const Timeline = styled(FlexItem)`
+  color: ${props => props.theme.colors.greyScales.text};
+  padding-top: ${props => props.theme.spacing.small};
   border-left: 2px solid ${props => `${props.theme.colors.primaryColor}`};
-  justify-content: center;
-  padding-bottom: 60px;
+  padding-bottom: ${props => props.theme.spacing.xl};
   position: relative;
   min-width: 80px;
   font-size: ${props => props.theme.fontSizes.extraSmall};
@@ -44,25 +45,22 @@ const Timeline = styled.div`
   }
 `;
 
-const Function = styled.div`
-  display: flex;
-  flex: 6;
-  flex-direction: column;
-  padding-bottom: 60px;
+const Function = styled(FlexItem)`
+  padding-bottom: ${props => props.theme.spacing.xl};
 `;
 
 const Title = styled.span`
-  font-size: 24px;
+  font-size: ${props => props.theme.fontSizes.medium};
   font-weight: bold;
   color: ${props => `${props.theme.colors.primaryColor}`};
-  margin-bottom: 10px;
+  margin-bottom: ${props => props.theme.spacing.small};
 `;
 
 const Company = styled.span`
-  color: #bfbfbf;
+  color: ${props => props.theme.colors.greyScales.text};
   font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: ${props => props.theme.fontSizes.small};
+  margin-bottom: ${props => props.theme.spacing.small};
 `;
 
 const Description = styled.span`
@@ -72,16 +70,25 @@ const Description = styled.span`
 
 export const Experience: FC<ExperienceProps> = ({
   children,
-  date,
+  startDate,
+  endDate,
   title,
   company
 }) => {
   return (
     <StyledExperience>
-      <Timeline>
-        <span>{date}</span>
+      <Timeline flex={1} box justifyContent="center">
+        <FlexBox column alignItems="center">
+          <span>{moment(startDate).format("MMM, YYYY")}</span>
+          <span>-</span>
+          <span>
+            {moment(endDate).isAfter()
+              ? "Now"
+              : moment(endDate).format("MMM, YYYY")}
+          </span>
+        </FlexBox>
       </Timeline>
-      <Function>
+      <Function flex={6} box column>
         <Title>{title}</Title>
         <Company>{company}</Company>
         <Description>{children}</Description>
