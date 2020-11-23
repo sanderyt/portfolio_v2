@@ -17,15 +17,13 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
     <Layout>
       <Header title="Projects" />
       {projects.map(project => {
-        const { title, id, slug, tech } = project;
-        console.log(tech, "tech");
+        const { title, id, slug, tech, projectImages } = project;
+        console.log(project, "tech");
         return (
           <Thumb
             name={title}
             id={id}
-            slug={slug}
-            tech="tech"
-            thumb={project.projectImages.url as string}
+            thumb={project.projectImages[0].url as string}
           />
         );
       })}

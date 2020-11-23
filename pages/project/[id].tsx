@@ -6,10 +6,7 @@ import { ProjectSchema } from "../../lib/types";
 import { getSingleProject } from "../../api/queries";
 
 import { Layout } from "../../components/UI/Layout";
-import { Header } from "../../components/UI/Header";
-import { Button } from "../../components/UI/Button";
 import { ProjectHeader } from "../../components/UI/ProjectHeader";
-import { ProjectImage } from "../../components/UI/ProjectImage";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -32,9 +29,11 @@ const Project: FC<ProjectProps> = ({ project }) => {
     startDate,
     endDate
   } = project;
-  function createMarkup() {
+
+  const createMarkup = () => {
     return { __html: description.html };
-  }
+  };
+
   return (
     <Layout>
       <ProjectHeader
@@ -45,7 +44,6 @@ const Project: FC<ProjectProps> = ({ project }) => {
         endDate={endDate}
       />
       <Content dangerouslySetInnerHTML={createMarkup()}></Content>
-      <ProjectImage url={projectImages.url as string} />
     </Layout>
   );
 };

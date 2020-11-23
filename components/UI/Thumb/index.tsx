@@ -7,8 +7,6 @@ import { fadeIn } from "../../../styles/keyframes";
 
 type ThumbProps = {
   name: string;
-  tech: string;
-  slug: string;
   id: number;
   thumb: string;
 };
@@ -36,7 +34,7 @@ const Image = styled.img`
 `;
 
 const Details = styled(FlexBox)`
-  background-color: #f7f7f7;
+  background-color: ${props => props.theme.colors.greyScales.light};
   border-top: 5px solid ${props => props.theme.colors.primaryColor};
   width: 100%;
   height: 100px;
@@ -45,16 +43,14 @@ const Details = styled(FlexBox)`
 `;
 
 const Name = styled.h3``;
-const Tech = styled.span``;
 
-export const Thumb: FC<ThumbProps> = ({ name, tech, slug, id, thumb }) => {
+export const Thumb: FC<ThumbProps> = ({ name, id, thumb }) => {
   return (
     <Link href={`/project/${id}`}>
       <StyledThumb center column box>
         <Image src={thumb} alt={name} />
-        <Details column alignItems="center">
+        <Details column center>
           <Name>{name}</Name>
-          <Tech>Built with {tech}</Tech>
         </Details>
       </StyledThumb>
     </Link>
