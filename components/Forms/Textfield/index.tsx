@@ -1,6 +1,9 @@
 import React, { FC, DetailedHTMLProps, InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import { FieldError } from "react-hook-form";
+import { labelToSentence } from "../../../lib/util";
+
+import { FlexBox } from "react-styled-flex";
 
 type RefReturn =
   | string
@@ -19,25 +22,22 @@ type TextfieldProps = DetailedHTMLProps<
   register?: () => RefReturn;
 };
 
-const TextfieldContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 25px 0;
+const TextfieldContainer = styled(FlexBox)`
+  margin: ${props => `${props.theme.spacing.medium} 0`};
 `;
 
 const Label = styled.span`
-  color: ${props => `${props.theme.colors.primaryColor}`};
+  color: ${props => props.theme.colors.primaryColor};
 `;
 
 const Input = styled.input`
-  background-color: #eee;
-  transition: ${props => `${props.theme.transition.ease}`};
+  background-color: ${props => props.theme.colors.greyScales.medium};
+  transition: ${props => props.theme.transition.ease};
   border: ${props =>
     props.error ? `1px solid ${props.theme.colors.red}` : `none`};
   outline: none;
-  border-radius: ${props => `${props.theme.borderRadius.large}`};
-  padding: 15px;
-  font-size: 1rem;
+  border-radius: ${props => props.theme.borderRadius.large};
+  padding: ${props => props.theme.spacing.small};
 `;
 
 const Error = styled.span`
@@ -52,8 +52,8 @@ export const Textfield: FC<TextfieldProps> = ({
   register
 }) => {
   return (
-    <TextfieldContainer>
-      <Label>{name}</Label>
+    <TextfieldContainer column>
+      <Label>{labelToSentence(name)}</Label>
       <Input
         type="text"
         id={name}

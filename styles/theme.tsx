@@ -10,7 +10,7 @@ const theme = {
     greyScales: {
       veryLight: "#fcfcfc",
       light: "#f7f7f7",
-      medium: "#ccc",
+      medium: "#eee",
       darker: "#aaa",
       text: "#808080"
     }
