@@ -14,6 +14,7 @@ const StyledButton = styled.button`
   border: none;
   outline: none;
   min-width: 125px;
+  margin: ${props => props.theme.spacing.medium};
   padding: ${props =>
     `${props.theme.spacing.normal} ${props.theme.spacing.small}`};
   height: 48px;
