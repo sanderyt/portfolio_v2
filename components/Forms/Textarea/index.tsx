@@ -21,7 +21,9 @@ type TextareaProps = DetailedHTMLProps<
   register: () => RefReturn;
 };
 
-const StyledTextarea = styled(FlexBox)``;
+const StyledTextarea = styled(FlexBox)`
+  margin: ${props => `${props.theme.spacing.small} 0`};
+`;
 
 const Input = styled.textarea`
   width: 300px;

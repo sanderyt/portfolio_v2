@@ -66,4 +66,8 @@ export const GlobalStyle = createGlobalStyle`
       color: ${props => props.theme.colors.greyScales.text};
     }
   }
+
+  .svg-inline--fa.fa-w-16 {
+    margin: ${props => props.theme.spacing.normal}
+  }
 `;

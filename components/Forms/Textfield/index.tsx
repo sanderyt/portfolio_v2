@@ -23,7 +23,7 @@ type TextfieldProps = DetailedHTMLProps<
 };
 
 const TextfieldContainer = styled(FlexBox)`
-  margin: ${props => `${props.theme.spacing.medium} 0`};
+  margin: ${props => `${props.theme.spacing.small} 0`};
 `;
 
 const Label = styled.span`

@@ -4,10 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import styled from "styled-components";
 
 import { Textfield } from "../Textfield";
 import { Button } from "../../UI/Button";
 import { Textarea } from "../Textarea";
+import { FlexBox } from "react-styled-flex";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
@@ -18,6 +20,8 @@ const schema = yup.object().shape({
   message: yup.string().required()
 });
 
+const Form = styled(FlexBox)``;
+
 export const Contactform = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema)
@@ -25,7 +29,7 @@ export const Contactform = () => {
   const onSubmit = data => console.log(data);
 
   return (
-    <form noValidate onSubmit={handleSubmit(onSubmit)}>
+    <Form noValidate onSubmit={handleSubmit(onSubmit)} as="form" column>
       <h1>Get in touch</h1>
       <Textfield
         name="name"
@@ -46,9 +50,9 @@ export const Contactform = () => {
         error={errors.message}
       />
       <Button isSubmit>
-        <FontAwesomeIcon icon={faPaperPlane} />
         Send
+        <FontAwesomeIcon icon={faPaperPlane} />
       </Button>
-    </form>
+    </Form>
   );
 };
