@@ -5,7 +5,7 @@ export type ProjectSchema = {
   startDate: string;
   endDate: string;
   description: {
-    html: string;
+    html: any;
   };
   tech: string[];
   slug: string;

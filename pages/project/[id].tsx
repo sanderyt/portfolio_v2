@@ -7,35 +7,42 @@ import { getSingleProject } from "../../api/queries";
 
 import { Layout } from "../../components/UI/Layout";
 import { ProjectHeader } from "../../components/UI/ProjectHeader";
-import { ImageGallery } from "../../components/UI/ImageGallery";
+import { FlexBox } from "react-styled-flex";
+import { device } from "../../styles/device";
 
 type ProjectProps = {
   project: ProjectSchema;
 };
 
-const Content = styled.div`
+const Content = styled(FlexBox)`
   color: ${props => props.theme.colors.greyScales.text};
   line-height: 1.75;
-  padding: ${props => props.theme.spacing.xl};
+
+  & p {
+    padding: ${props => `0 ${props.theme.spacing.xl}`};
+  }
+
+  & img {
+    width: 100%;
+    height: 325px;
+    border: ${props => props.theme.borders.thinLine};
+
+    @media ${device.laptop} {
+      width: 800px;
+      height: 400px;
+      box-shadow: ${props => props.theme.boxShadow};
+      border-radius: ${props => props.theme.borderRadius.large};
+      border-top: 5px solid ${props => props.theme.colors.primaryColor};
+    }
+  }
 `;
 
 const Project: FC<ProjectProps> = ({ project }) => {
-  const {
-    title,
-    description,
-    slug,
-    tech,
-    projectImages,
-    url,
-    startDate,
-    endDate
-  } = project;
+  const { title, description, tech, url, startDate, endDate } = project;
 
   const createMarkup = () => {
     return { __html: description.html };
   };
-
-  const images: string[] = projectImages.map(image => image.url as string);
 
   return (
     <Layout>
@@ -46,8 +53,7 @@ const Project: FC<ProjectProps> = ({ project }) => {
         startDate={startDate}
         endDate={endDate}
       />
-      <ImageGallery images={images} />
-      <Content dangerouslySetInnerHTML={createMarkup()}></Content>
+      <Content center column dangerouslySetInnerHTML={createMarkup()}></Content>
     </Layout>
   );
 };
