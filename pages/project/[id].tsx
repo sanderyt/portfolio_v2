@@ -7,6 +7,7 @@ import { getSingleProject } from "../../api/queries";
 
 import { Layout } from "../../components/UI/Layout";
 import { ProjectHeader } from "../../components/UI/ProjectHeader";
+import { ImageGallery } from "../../components/UI/ImageGallery";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -34,6 +35,8 @@ const Project: FC<ProjectProps> = ({ project }) => {
     return { __html: description.html };
   };
 
+  const images: string[] = projectImages.map(image => image.url as string);
+
   return (
     <Layout>
       <ProjectHeader
@@ -43,6 +46,7 @@ const Project: FC<ProjectProps> = ({ project }) => {
         startDate={startDate}
         endDate={endDate}
       />
+      <ImageGallery images={images} />
       <Content dangerouslySetInnerHTML={createMarkup()}></Content>
     </Layout>
   );
