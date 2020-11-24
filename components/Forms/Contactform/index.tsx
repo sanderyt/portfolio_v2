@@ -45,7 +45,7 @@ export const Contactform = () => {
         register={register}
         error={errors.message}
       />
-      <Button isSubmit>
+      <Button isSubmit isLoading>
         <FontAwesomeIcon icon={faPaperPlane} />
         Send
       </Button>

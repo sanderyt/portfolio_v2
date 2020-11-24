@@ -2,35 +2,51 @@ import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { lighten } from "polished";
 
+import { Spinner } from "../../Spinner";
+
 type ButtonProps = {
   children: ReactNode;
+  isLoading?: boolean;
   isSubmit?: boolean;
 };
 
 const StyledButton = styled.button`
   border: none;
   outline: none;
-  padding: 12px 24px;
+  min-width: 125px;
+  padding: ${props =>
+    `${props.theme.spacing.normal} ${props.theme.spacing.small}`};
   height: 48px;
-  cursor: pointer;
+  cursor: ${props => (props.isLoading ? "not-allowed" : "pointer")};
   font-weight: bold;
-  font-size: ${props => `${props.theme.fontSizes.small}`};
-  color: ${props => `${props.theme.colors.white}`};
-  border-radius: ${props => `${props.theme.borderRadius.large}`};
+  font-size: ${props => props.theme.fontSizes.small};
+  color: ${props => props.theme.colors.white};
+  border-radius: ${props => props.theme.borderRadius.large};
   background-color: ${props =>
-    props.primary ? `${props.theme.colors.primaryColor}` : "navy"};
+    props.isLoading
+      ? props.theme.colors.greyScales.dark
+      : props.theme.colors.primaryColor};
   transition: ${props => `${props.theme.transition.ease}`};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: ${props =>
-      props.primary ? lighten(0.05, props.theme.colors.primaryColor) : "navy"};
+      props.isLoading
+        ? props.theme.colors.greyScales.dark
+        : lighten(0.05, props.theme.colors.primaryColor)};
   }
 `;
 
-export const Button: FC<ButtonProps> = ({ children, isSubmit }) => {
+export const Button: FC<ButtonProps> = ({ children, isSubmit, isLoading }) => {
   return (
-    <StyledButton primary type={isSubmit ? "submit" : "button"}>
-      {children}
+    <StyledButton
+      type={isSubmit ? "submit" : "button"}
+      isLoading={isLoading}
+      disabled={isLoading}
+    >
+      {isLoading ? <Spinner /> : children}
     </StyledButton>
   );
 };

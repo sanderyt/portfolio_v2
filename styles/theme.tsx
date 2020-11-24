@@ -11,6 +11,7 @@ const theme = {
       veryLight: "#fcfcfc",
       light: "#f7f7f7",
       medium: "#eee",
+      dark: "#ccc",
       darker: "#aaa",
       text: "#808080"
     }
