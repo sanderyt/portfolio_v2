@@ -46,7 +46,7 @@ const Copyright = styled.span`
 `;
 
 const Avatar = styled.img`
-  height: 250px;
+  height: 175px;
   border-radius: ${props => props.theme.borderRadius.round};
 `;
 
@@ -92,7 +92,10 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
       <FlexItem alignItems="center" column flex={6} box>
         <h1>Sander van Rijsoort 👋</h1>
         <h2>React developer ⚛ </h2>
-        <Avatar src="https://avatars1.githubusercontent.com/u/52009732?s=460&u=652d6f3ea2d6de2ead3be6eced1ede3e63d09a7b&v=4" />
+        <Avatar
+          src="./images/sander_van_rijsoort.png"
+          alt="Sander van Rijsoort"
+        />
         <h3>Based in Amsterdam 🇳🇱</h3>
       </FlexItem>
       <FlexItem width="100%" flex={3}>
