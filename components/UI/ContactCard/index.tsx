@@ -1,57 +1,52 @@
-import React from "react";
+import React, { FC } from "react";
+import styled from "styled-components";
+import { fadeIn } from "../../../styles/keyframes";
+
+import { FlexBox, FlexItem } from "react-styled-flex";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faHome } from "@fortawesome/free-solid-svg-icons";
-import styled from "styled-components";
 
-const StyledContactCard = styled.div`
-  display: flex;
+const StyledContactCard = styled(FlexBox)`
   width: 80%;
   cursor: pointer;
-  margin-top: 25px;
+  margin: ${props => props.theme.spacing.small};
   height: 75px;
-  animation: fadeIn 1s forwards;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 10px #aaa;
-  border-radius: 10px;
-  transition: 500ms;
+  animation: ${fadeIn} 1s forwards;
+  box-shadow: ${props => props.theme.boxShadow};
+  border-radius: ${props => props.theme.borderRadius.large};
+  transition: ${props => props.theme.transition.ease};
 `;
 
-const Icon = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  & .fa-phone,
-  .fa-home {
-    color: ${props => `${props.theme.colors.primaryColor}`};
-    font-size: ${props => `${props.theme.fontSizes.medium}`};
-  }
+const Icon = styled(FlexItem)`
+  color: ${props => props.theme.colors.primaryColor};
+  font-size: ${props => props.theme.fontSizes.medium};
 `;
 
-const Text = styled.div`
-  background-color: #f7f7f7;
-  border-bottom-right-radius: 5px;
-  align-items: center;
-  border-top-right-radius: 5px;
+const Text = styled(FlexItem)`
+  background-color: ${props => props.theme.colors.greyScales.light};
+  border-bottom-right-radius: ${props => props.theme.borderRadius.large};
+  border-top-right-radius: ${props => props.theme.borderRadius.large};
   height: 100%;
-  display: flex;
-  flex: 3;
-  justify-content: center;
-  flex-direction: column;
-  & .type {
-    color: #adadad;
-    margin-bottom: 5px;
-  }
 `;
 
-export const ContactCard = ({ icon, text, type }) => {
+const Type = styled.span`
+  color: ${props => props.theme.colors.greyScales.text};
+  margin-bottom: ${props => props.theme.spacing.normal};
+`;
+
+type ContactCardProps = {
+  text: string;
+  type: string;
+};
+
+export const ContactCard: FC<ContactCardProps> = ({ text, type }) => {
   return (
-    <StyledContactCard>
-      <Icon>
+    <StyledContactCard center>
+      <Icon box justifyContent="center" flex={1}>
         <FontAwesomeIcon icon={faHome} />
       </Icon>
-      <Text>
-        <span className="type">{type}</span>
+      <Text box center flex={3} column>
+        <Type>{type}</Type>
         <span>{text}</span>
       </Text>
     </StyledContactCard>
