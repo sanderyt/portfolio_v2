@@ -18,8 +18,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
       <Header title="Projects" />
       {projects &&
         projects.map(project => {
-          const { title, id, slug, tech, projectImages } = project;
-          console.log(project, "tech");
+          const { title, id } = project;
           return (
             <Thumb
               name={title}
