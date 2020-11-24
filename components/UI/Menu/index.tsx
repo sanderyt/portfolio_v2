@@ -42,7 +42,7 @@ const Footer = styled(FlexItem)`
 `;
 
 const Copyright = styled.span`
-  color: ${props => props.theme.colors.greyScales.medium};
+  color: ${props => props.theme.colors.greyScales.text};
 `;
 
 const Avatar = styled.img`

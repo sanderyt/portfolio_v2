@@ -50,8 +50,8 @@ const theme = {
   fontSizes: {
     extraSmall: "0.75rem",
     small: "1rem",
-    medium: "2rem",
-    large: "3rem"
+    medium: "1.5rem",
+    large: "2rem"
   },
   menuWidth: "400px"
 };

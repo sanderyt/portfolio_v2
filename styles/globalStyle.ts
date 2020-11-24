@@ -67,7 +67,8 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  .svg-inline--fa.fa-w-16 {
-    margin: ${props => props.theme.spacing.normal}
+  .svg-inline--fa.fa-w-16, 
+  .svg-inline--fa.fa-w-20 {
+    margin: ${props => `0 ${props.theme.spacing.normal}`}
   }
 `;
