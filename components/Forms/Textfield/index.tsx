@@ -62,7 +62,7 @@ export const Textfield: FC<TextfieldProps> = ({
         ref={register}
         error={error}
       />
-      <Error error={error}>{error && error.message}</Error>
+      <Error error={error}>{error && labelToSentence(error.message)}</Error>
     </TextfieldContainer>
   );
 };

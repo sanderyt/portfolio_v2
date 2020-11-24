@@ -14,7 +14,8 @@ const schema = yup.object().shape({
   email: yup
     .string()
     .email()
-    .required()
+    .required(),
+  message: yup.string().required()
 });
 
 export const Contactform = () => {
