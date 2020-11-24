@@ -20,17 +20,9 @@ const Contact = () => {
           </Col>
           <Col lg={6} noGutter={true}>
             <FlexBox center column>
-              <ContactCard
-                text="+31 6 43 49 93 41"
-                type="Telephone"
-                icon="phone"
-              />
-              <ContactCard
-                text="s.rijsoort@gmail.com"
-                type="Email"
-                icon="mail"
-              />
-              <ContactCard text="Amsterdam, NL" type="City" icon="home" />
+              <ContactCard text="+31 6 43 49 93 41" type="Telephone" />
+              <ContactCard text="s.rijsoort@gmail.com" type="Email" />
+              <ContactCard text="Amsterdam, NL" type="City" />
             </FlexBox>
           </Col>
         </Row>

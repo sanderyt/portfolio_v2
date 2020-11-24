@@ -5,6 +5,7 @@ import { fadeIn } from "../../../styles/keyframes";
 import { FlexBox, FlexItem } from "react-styled-flex";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope, faHome } from "@fortawesome/free-solid-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const StyledContactCard = styled(FlexBox)`
   width: 80%;
@@ -40,10 +41,16 @@ type ContactCardProps = {
 };
 
 export const ContactCard: FC<ContactCardProps> = ({ text, type }) => {
+  const renderIcon = (): IconProp => {
+    if (type === "Telephone") return faPhone;
+    if (type === "Email") return faEnvelope;
+    if (type === "City") return faHome;
+  };
+
   return (
     <StyledContactCard center>
       <Icon box justifyContent="center" flex={1}>
-        <FontAwesomeIcon icon={faHome} />
+        <FontAwesomeIcon icon={renderIcon()} />
       </Icon>
       <Text box center flex={3} column>
         <Type>{type}</Type>
