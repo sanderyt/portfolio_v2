@@ -8,12 +8,14 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Montserrat";
     font-weight: 500;
     src: url("../fonts/Montserrat-Regular.ttf");
+    font-display: swap;
   }
 
   @font-face {
     font-family: "WorkSans";
     font-weight: 500;
     src: url("../fonts/WorkSans-Regular.ttf");
+    font-display: swap;
   }
 
   body,
