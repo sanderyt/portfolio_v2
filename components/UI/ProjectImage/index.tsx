@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 type ProjectImageProps = {
@@ -8,6 +8,6 @@ type ProjectImageProps = {
 const StyledProjectImage = styled.img`
   width: 500px;
 `;
-export const ProjectImage: React.FC<ProjectImageProps> = ({ url }) => {
+export const ProjectImage: FC<ProjectImageProps> = ({ url }) => {
   return <StyledProjectImage src={url} />;
 };

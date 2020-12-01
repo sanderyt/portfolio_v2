@@ -9,12 +9,12 @@ type HeaderProps = {
 };
 
 const StyledHeader = styled(FlexBox)`
-  background-color: ${props => props.theme.colors.greyScales.veryLight};
+  background-color: ${(props) => props.theme.colors.greyScales.veryLight};
   height: 200px;
 `;
 
 const Title = styled.h1`
-  color: ${props => props.theme.colors.primaryColor};
+  color: ${(props) => props.theme.colors.primaryColor};
 `;
 
 export const Header: FC<HeaderProps> = ({ title, smallDescription }) => {

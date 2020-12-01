@@ -17,15 +17,15 @@ type ProjectHeaderProps = {
 };
 
 const StyledContainer = styled(Container)`
-  background-color: ${props => props.theme.colors.greyScales.light};
+  background-color: ${(props) => props.theme.colors.greyScales.light};
 `;
 
 const Title = styled.h1`
-  color: ${props => props.theme.colors.primaryColor};
+  color: ${(props) => props.theme.colors.primaryColor};
 `;
 
 const Detail = styled.span`
-  color: ${props => props.theme.colors.greyScales.text};
+  color: ${(props) => props.theme.colors.greyScales.text};
 `;
 
 export const ProjectHeader: FC<ProjectHeaderProps> = ({
@@ -33,23 +33,18 @@ export const ProjectHeader: FC<ProjectHeaderProps> = ({
   url,
   technologies,
   startDate,
-  endDate
+  endDate,
 }) => {
   return (
     <StyledContainer fluid>
       <Row>
         <Col lg={6} md={12}>
-          <FlexBox
-            column
-            justifyContent="center"
-            height="225px"
-            padding="0 0 0 48px"
-          >
+          <FlexBox column justifyContent="center" height="225px" padding="0 0 0 48px">
             <Title>{title}</Title>
             <Detail>Built with</Detail>
             <FlexBox wrap>
-              {technologies.map(technology => {
-                return <Pill>{technology}</Pill>;
+              {technologies.map((technology, index) => {
+                return <Pill key={technology + index}>{technology}</Pill>;
               })}
             </FlexBox>
             <FlexBox column>
@@ -65,7 +60,9 @@ export const ProjectHeader: FC<ProjectHeaderProps> = ({
           <FlexBox column center height="225px">
             <Link href={url}>
               <a target="_blank">
-                <Button>See live</Button>
+                <Button isLoading={false} isSubmit={false}>
+                  See live
+                </Button>
               </a>
             </Link>
           </FlexBox>

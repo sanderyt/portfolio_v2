@@ -1,26 +1,23 @@
 import React, { FC } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBriefcase,
-  faCertificate,
-  faGraduationCap
-} from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import { FlexBox } from "react-styled-flex";
 import { GetServerSideProps } from "next";
 import { client } from "../api/gqlClient";
+import { getResume } from "../api/queries";
+import { ResumeSchema } from "../types/typings";
+import { createMarkup } from "../lib/util";
 
 import { Layout } from "../components/UI/Layout";
 import { Experience } from "../components/UI/Experience";
 import { Header } from "../components/UI/Header";
-import { getResume } from "../api/queries";
-import { ResumeSchema } from "../lib/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBriefcase, faCertificate, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { FlexBox } from "react-styled-flex";
 
 const Content = styled(FlexBox)`
-  padding: ${props => props.theme.spacing.xl};
+  padding: ${(props) => props.theme.spacing.xl};
 
   @media only screen and (max-width: 768px) {
-    padding: ${props => props.theme.spacing.small};
+    padding: ${(props) => props.theme.spacing.small};
   }
 `;
 
@@ -39,10 +36,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           <FontAwesomeIcon icon={faBriefcase} />
           Experience
         </h2>
-        {work.map(work => {
-          function createMarkup() {
-            return { __html: work.description.html };
-          }
+        {work.map((work) => {
           return (
             <Experience
               company={work.organisation}
@@ -51,7 +45,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
               title={work.title}
               key={work.id}
             >
-              <div dangerouslySetInnerHTML={createMarkup()}></div>
+              <div dangerouslySetInnerHTML={createMarkup(work.description.html)}></div>
             </Experience>
           );
         })}
@@ -59,10 +53,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           <FontAwesomeIcon icon={faCertificate} />
           Certificates
         </h2>
-        {certificates.map(work => {
-          function createMarkup() {
-            return { __html: work.description.html };
-          }
+        {certificates.map((work) => {
           return (
             <Experience
               company={work.organisation}
@@ -71,7 +62,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
               title={work.title}
               key={work.id}
             >
-              <div dangerouslySetInnerHTML={createMarkup()}></div>
+              <div dangerouslySetInnerHTML={createMarkup(work.description.html)}></div>
             </Experience>
           );
         })}
@@ -79,10 +70,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           <FontAwesomeIcon icon={faGraduationCap} />
           Education
         </h2>
-        {education.map(work => {
-          function createMarkup() {
-            return { __html: work.description.html };
-          }
+        {education.map((work) => {
           return (
             <Experience
               company={work.organisation}
@@ -91,7 +79,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
               title={work.title}
               key={work.id}
             >
-              <div dangerouslySetInnerHTML={createMarkup()}></div>
+              <div dangerouslySetInnerHTML={createMarkup(work.description.html)}></div>
             </Experience>
           );
         })}
@@ -100,21 +88,23 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
-  const { resumes } = await client.request(getResume);
+export const getServerSideProps: GetServerSideProps = async () => {
+  const response = client && (await client.request(getResume));
 
-  const work = resumes.filter(element => element.type === "Work");
-  const certificates = resumes.filter(
-    element => element.type === "Certifications"
+  const work = response.resumes.filter((element: ResumeSchema) => element.type === "Work");
+  const certificates = response.resumes.filter(
+    (element: ResumeSchema) => element.type === "Certifications"
   );
-  const education = resumes.filter(element => element.type === "Education");
+  const education = response.resumes.filter(
+    (element: ResumeSchema) => element.type === "Education"
+  );
 
   return {
     props: {
       work,
       certificates,
-      education
-    }
+      education,
+    },
   };
 };
 

@@ -1,12 +1,13 @@
+import { FC } from "react";
+
 import { Layout } from "../components/UI/Layout";
 
-const Home = () => (
+const Home: FC = () => (
   <Layout>
     <h1>
-      Hi, I am <span>Sander van Rijsoort.</span> I get in a flow by writing
-      code.
+      Hi, I am <span>Sander van Rijsoort.</span> I get in a flow by writing code.
     </h1>
-    <h2>Based in Amsterdam. Let's build together.</h2>
+    <h2>Based in Amsterdam. Lets build together.</h2>
     <span>Maybe particle system here</span>
   </Layout>
 );

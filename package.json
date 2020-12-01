@@ -5,7 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint --ext ts --ext tsx --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn type-check && yarn lint ."
+    }
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
@@ -13,6 +20,9 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@hookform/resolvers": "^1.0.1",
+    "@types/nprogress": "^0.2.0",
+    "@types/styled-components": "^5.1.4",
+    "@types/yup": "^0.29.9",
     "@zeit/next-sass": "^1.0.1",
     "graphql": "^15.4.0",
     "graphql-request": "^3.3.0",
@@ -35,7 +45,17 @@
   "devDependencies": {
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.56",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
     "babel-plugin-styled-components": "^1.11.1",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "prettier": "^2.2.0",
     "typescript": "^4.0.5"
   }
 }

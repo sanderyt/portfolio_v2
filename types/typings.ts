@@ -5,7 +5,7 @@ export type ProjectSchema = {
   startDate: string;
   endDate: string;
   description: {
-    html: any;
+    html: string;
   };
   tech: string[];
   slug: string;
@@ -22,4 +22,18 @@ export type ResumeSchema = {
   };
   startDate: string;
   endDate: string;
+};
+
+export type ContactFormInput = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+export type Markup = {
+  __html: string;
+};
+
+export type ProjectReponse = {
+  project: ProjectSchema;
 };

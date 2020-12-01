@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import { Layout } from "../components/UI/Layout";
 import { ContactCard } from "../components/UI/ContactCard";
@@ -7,7 +7,7 @@ import { FlexBox } from "react-styled-flex";
 import { Contactform } from "../components/Forms/Contactform";
 import { Header } from "../components/UI/Header";
 
-const Contact = () => {
+const Contact: FC = () => {
   return (
     <Layout>
       <Header title="Contact" />

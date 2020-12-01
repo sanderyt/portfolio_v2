@@ -15,11 +15,11 @@ const StyledThumb = styled(FlexItem)`
   animation: ${fadeIn} 1s forwards;
   height: auto;
   width: 400px;
-  box-shadow: ${props => props.theme.boxShadow};
-  border-radius: ${props => props.theme.borderRadius.large};
-  margin: ${props => props.theme.spacing.large};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  border-radius: ${(props) => props.theme.borderRadius.large};
+  margin: ${(props) => props.theme.spacing.large};
   cursor: pointer;
-  transition: ${props => props.theme.transition.ease};
+  transition: ${(props) => props.theme.transition.ease};
 
   &:hover {
     transform: translateY(-2%);
@@ -29,17 +29,17 @@ const StyledThumb = styled(FlexItem)`
 const Image = styled.img`
   width: 100%;
   height: 300px;
-  border-radius: ${props => props.theme.borderRadius.large};
+  border-radius: ${(props) => props.theme.borderRadius.large};
   object-fit: cover;
 `;
 
 const Details = styled(FlexBox)`
-  background-color: ${props => props.theme.colors.greyScales.light};
-  border-top: 5px solid ${props => props.theme.colors.primaryColor};
+  background-color: ${(props) => props.theme.colors.greyScales.light};
+  border-top: 5px solid ${(props) => props.theme.colors.primaryColor};
   width: 100%;
   height: 100px;
-  border-bottom-left-radius: ${props => props.theme.borderRadius.large};
-  border-bottom-right-radius: ${props => props.theme.borderRadius.large};
+  border-bottom-left-radius: ${(props) => props.theme.borderRadius.large};
+  border-bottom-right-radius: ${(props) => props.theme.borderRadius.large};
 `;
 
 const Name = styled.h3``;

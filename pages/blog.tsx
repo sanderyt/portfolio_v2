@@ -1,15 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 
 import { Layout } from "../components/UI/Layout";
 import { Header } from "../components/UI/Header";
 import { FlexBox } from "react-styled-flex";
 
-const Blog = () => {
+const Blog: FC = () => {
   return (
     <Layout>
       <Header title="Blog" />
       <FlexBox center>
-        <h2>Still have to work on the first article... 🙈</h2>
+        <h2>
+          Still have to work on the first article...{" "}
+          <span role="img" aria-label="monkeyIcon">
+            🙈
+          </span>
+        </h2>
       </FlexBox>
     </Layout>
   );

@@ -1,8 +1,8 @@
 import React, { FC, DetailedHTMLProps } from "react";
 import styled from "styled-components";
+import { labelToSentence } from "../../../lib/util";
 
 import { FlexBox } from "react-styled-flex";
-import { labelToSentence } from "../../../lib/util";
 
 type RefReturn =
   | string
@@ -21,48 +21,40 @@ type TextareaProps = DetailedHTMLProps<
   register: () => RefReturn;
 };
 
+interface InputProps {
+  readonly isError: Error;
+}
+
 const StyledTextarea = styled(FlexBox)`
-  margin: ${props => `${props.theme.spacing.small} 0`};
+  margin: ${(props) => `${props.theme.spacing.small} 0`};
 `;
 
-const Input = styled.textarea`
+const Input = styled.textarea<InputProps>`
   width: 300px;
-  background-color: ${props => props.theme.colors.greyScales.medium};
-  border: ${props =>
-    props.error ? `1px solid ${props.theme.colors.red}` : `none`};
+  background-color: ${(props) => props.theme.colors.greyScales.medium};
+  border: ${(props) => (props.isError ? `1px solid ${props.theme.colors.red}` : `none`)};
   outline: none;
-  border-radius: ${props => props.theme.borderRadius.large};
-  padding: ${props => props.theme.spacing.small};
+  border-radius: ${(props) => props.theme.borderRadius.large};
+  padding: ${(props) => props.theme.spacing.small};
   resize: none;
   height: 200px;
 `;
 
 const Label = styled.span`
-  color: ${props => props.theme.colors.primaryColor};
+  color: ${(props) => props.theme.colors.primaryColor};
 `;
 
 const Error = styled.span`
-  color: ${props => `${props.theme.colors.red}`};
-  font-size: ${props => `${props.theme.fontSizes.extraSmall}`};
+  color: ${(props) => `${props.theme.colors.red}`};
+  font-size: ${(props) => `${props.theme.fontSizes.extraSmall}`};
 `;
 
-export const Textarea: FC<TextareaProps> = ({
-  name,
-  placeholder,
-  error,
-  register
-}) => {
+export const Textarea: FC<TextareaProps> = ({ name, placeholder, error, register }) => {
   return (
     <StyledTextarea column>
       <Label>{labelToSentence(name)}</Label>
-      <Input
-        name={name}
-        id={name}
-        placeholder={placeholder}
-        ref={register}
-        error={error}
-      />
-      <Error error={error}>{error && labelToSentence(error.message)}</Error>
+      <Input name={name} id={name} placeholder={placeholder} ref={register} isError={error} />
+      <Error>{error && labelToSentence(error.message)}</Error>
     </StyledTextarea>
   );
 };

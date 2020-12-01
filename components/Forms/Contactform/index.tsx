@@ -10,23 +10,21 @@ import { Textfield } from "../Textfield";
 import { Button } from "../../UI/Button";
 import { Textarea } from "../Textarea";
 import { FlexBox } from "react-styled-flex";
+import { ContactFormInput } from "../../../types/typings";
 
 const schema = yup.object().shape({
   name: yup.string().required(),
-  email: yup
-    .string()
-    .email()
-    .required(),
-  message: yup.string().required()
+  email: yup.string().email().required(),
+  message: yup.string().required(),
 });
 
 const Form = styled(FlexBox)``;
 
-export const Contactform = () => {
+export const Contactform = (): JSX.Element => {
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(schema),
   });
-  const onSubmit = data => console.log(data);
+  const onSubmit = (data: ContactFormInput): void => console.log(data);
 
   return (
     <Form noValidate onSubmit={handleSubmit(onSubmit)} as="form" column>
@@ -49,7 +47,7 @@ export const Contactform = () => {
         register={register}
         error={errors.message}
       />
-      <Button isSubmit>
+      <Button isLoading={false} isSubmit>
         Send
         <FontAwesomeIcon icon={faPaperPlane} />
       </Button>

@@ -23,13 +23,13 @@ export const GlobalStyle = createGlobalStyle`
   li,
   input,
   textarea {
-    font-family: ${props => props.theme.fonts.main[0]};
+    font-family: ${(props) => props.theme.fonts.main[0]};
     padding: 0;
     margin: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: ${props => props.theme.fonts.heading[0]};
+    font-family: ${(props) => props.theme.fonts.heading[0]};
   }
 
   strong {
@@ -37,12 +37,12 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #nprogress .bar {
-  background: ${props => props.theme.colors.primaryColor} !important;
+  background: ${(props) => props.theme.colors.primaryColor} !important;
   }
 
   #nprogress .spinner-icon {
-    border-top-color: ${props => props.theme.colors.primaryColor} !important;
-    border-left-color: ${props => props.theme.colors.primaryColor} !important;
+    border-top-color: ${(props) => props.theme.colors.primaryColor} !important;
+    border-left-color: ${(props) => props.theme.colors.primaryColor} !important;
 
     @media only screen and (max-width: 768px) {
       margin-top: 40px;
@@ -57,18 +57,18 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   a {
-    color: ${props => props.theme.colors.primaryColor};
+    color: ${(props) => props.theme.colors.primaryColor};
     text-decoration: none;
-    transition: ${props => props.theme.transition.ease};
+    transition: ${(props) => props.theme.transition.ease};
     font-weight: bold;
 
     &:hover {
-      color: ${props => props.theme.colors.greyScales.text};
+      color: ${(props) => props.theme.colors.greyScales.text};
     }
   }
 
   .svg-inline--fa.fa-w-16, 
   .svg-inline--fa.fa-w-20 {
-    margin: ${props => `0 ${props.theme.spacing.normal}`}
+    margin: ${(props) => `0 ${props.theme.spacing.normal}`}
   }
 `;

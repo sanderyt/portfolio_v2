@@ -2,8 +2,9 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { GetServerSideProps } from "next";
 import { client } from "../../api/gqlClient";
-import { ProjectSchema } from "../../lib/types";
+import { ProjectSchema } from "../../types/typings";
 import { getSingleProject } from "../../api/queries";
+import { createMarkup } from "../../lib/util";
 
 import { Layout } from "../../components/UI/Layout";
 import { ProjectHeader } from "../../components/UI/ProjectHeader";
@@ -15,34 +16,30 @@ type ProjectProps = {
 };
 
 const Content = styled(FlexBox)`
-  color: ${props => props.theme.colors.greyScales.text};
+  color: ${(props) => props.theme.colors.greyScales.text};
   line-height: 1.75;
 
   & p {
-    padding: ${props => `0 ${props.theme.spacing.xl}`};
+    padding: ${(props) => `0 ${props.theme.spacing.xl}`};
   }
 
   & img {
     width: 100%;
     height: 325px;
-    border: ${props => props.theme.borders.thinLine};
+    border: ${(props) => props.theme.borders.thinLine};
 
     @media ${device.laptop} {
       width: 800px;
       height: 400px;
-      box-shadow: ${props => props.theme.boxShadow};
-      border-radius: ${props => props.theme.borderRadius.large};
-      border-top: 5px solid ${props => props.theme.colors.primaryColor};
+      box-shadow: ${(props) => props.theme.boxShadow};
+      border-radius: ${(props) => props.theme.borderRadius.large};
+      border-top: 5px solid ${(props) => props.theme.colors.primaryColor};
     }
   }
 `;
 
 const Project: FC<ProjectProps> = ({ project }) => {
   const { title, description, tech, url, startDate, endDate } = project;
-
-  const createMarkup = () => {
-    return { __html: description.html };
-  };
 
   return (
     <Layout>
@@ -53,23 +50,24 @@ const Project: FC<ProjectProps> = ({ project }) => {
         startDate={startDate}
         endDate={endDate}
       />
-      <Content center column dangerouslySetInnerHTML={createMarkup()}></Content>
+      <Content center column dangerouslySetInnerHTML={createMarkup(description.html)}></Content>
     </Layout>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ctx => {
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { id } = ctx.query;
 
   const variables = {
-    id
+    id,
   };
 
-  const { project } = await client.request(getSingleProject, variables);
+  const response = client && (await client.request(getSingleProject, variables));
+  const project = response.project;
   return {
     props: {
-      project
-    }
+      project,
+    },
   };
 };
 

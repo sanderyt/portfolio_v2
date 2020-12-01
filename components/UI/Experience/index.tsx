@@ -16,20 +16,20 @@ type ExperienceProps = {
 
 const StyledExperience = styled(FlexBox)`
   animation: ${fadeIn} 1s forwards;
-  margin: ${props => props.theme.spacing.medium} 0;
+  margin: ${(props) => props.theme.spacing.medium} 0;
 `;
 
 const Timeline = styled(FlexItem)`
-  color: ${props => props.theme.colors.greyScales.text};
-  padding-top: ${props => props.theme.spacing.small};
-  border-left: 2px solid ${props => `${props.theme.colors.primaryColor}`};
-  padding-bottom: ${props => props.theme.spacing.xl};
+  color: ${(props) => props.theme.colors.greyScales.text};
+  padding-top: ${(props) => props.theme.spacing.small};
+  border-left: 2px solid ${(props) => `${props.theme.colors.primaryColor}`};
+  padding-bottom: ${(props) => props.theme.spacing.xl};
   position: relative;
   min-width: 80px;
-  font-size: ${props => props.theme.fontSizes.extraSmall};
+  font-size: ${(props) => props.theme.fontSizes.extraSmall};
 
   @media ${device.laptopL} {
-    font-size: ${props => props.theme.fontSizes.small};
+    font-size: ${(props) => props.theme.fontSizes.small};
   }
 
   &:before {
@@ -39,33 +39,33 @@ const Timeline = styled(FlexItem)`
     top: -2px;
     height: 15px;
     width: 15px;
-    border-radius: ${props => props.theme.borderRadius.round};
+    border-radius: ${(props) => props.theme.borderRadius.round};
     background-color: white;
-    border: 4px solid ${props => `${props.theme.colors.primaryColor}`};
+    border: 4px solid ${(props) => `${props.theme.colors.primaryColor}`};
   }
 `;
 
 const Function = styled(FlexItem)`
-  padding-bottom: ${props => props.theme.spacing.xl};
+  padding-bottom: ${(props) => props.theme.spacing.xl};
 `;
 
 const Title = styled.span`
-  font-size: ${props => props.theme.fontSizes.medium};
+  font-size: ${(props) => props.theme.fontSizes.medium};
   font-weight: bold;
-  color: ${props => `${props.theme.colors.primaryColor}`};
-  margin-bottom: ${props => props.theme.spacing.small};
+  color: ${(props) => `${props.theme.colors.primaryColor}`};
+  margin-bottom: ${(props) => props.theme.spacing.small};
 `;
 
 const Company = styled.span`
-  color: ${props => props.theme.colors.greyScales.text};
+  color: ${(props) => props.theme.colors.greyScales.text};
   font-weight: bold;
-  font-size: ${props => props.theme.fontSizes.small};
-  margin-bottom: ${props => props.theme.spacing.small};
+  font-size: ${(props) => props.theme.fontSizes.small};
+  margin-bottom: ${(props) => props.theme.spacing.small};
 `;
 
 const Description = styled.span`
   line-height: 1.5;
-  color: ${props => props.theme.colors.greyScales.text};
+  color: ${(props) => props.theme.colors.greyScales.text};
 `;
 
 export const Experience: FC<ExperienceProps> = ({
@@ -73,7 +73,7 @@ export const Experience: FC<ExperienceProps> = ({
   startDate,
   endDate,
   title,
-  company
+  company,
 }) => {
   return (
     <StyledExperience>
@@ -81,11 +81,7 @@ export const Experience: FC<ExperienceProps> = ({
         <FlexBox column alignItems="center">
           <span>{moment(startDate).format("MMM, YYYY")}</span>
           <span>-</span>
-          <span>
-            {moment(endDate).isAfter()
-              ? "Now"
-              : moment(endDate).format("MMM, YYYY")}
-          </span>
+          <span>{moment(endDate).isAfter() ? "Now" : moment(endDate).format("MMM, YYYY")}</span>
         </FlexBox>
       </Timeline>
       <Function flex={6} box column>
