@@ -38,9 +38,9 @@ const Content = styled(FlexBox)`
   }
 `;
 
-const Project: FC<ProjectProps> = ({ project }) => {
-  const { title, description, tech, url, startDate, endDate } = project;
-
+const Project: FC<ProjectProps> = ({
+  project: { title, description, tech, url, startDate, endDate },
+}) => {
   return (
     <Layout>
       <ProjectHeader

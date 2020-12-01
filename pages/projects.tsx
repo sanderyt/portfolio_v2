@@ -17,11 +17,8 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
     <Layout>
       <Header title="Projects" />
       {projects &&
-        projects.map((project) => {
-          const { title, id } = project;
-          return (
-            <Thumb name={title} id={id} thumb={project.projectImages[0].url as string} key={id} />
-          );
+        projects.map(({ title, id, projectImages }: ProjectSchema) => {
+          return <Thumb name={title} id={id} thumb={projectImages[0].url as string} key={id} />;
         })}
     </Layout>
   );

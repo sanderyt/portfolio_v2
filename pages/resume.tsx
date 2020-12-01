@@ -12,12 +12,13 @@ import { Header } from "../components/UI/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faCertificate, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FlexBox } from "react-styled-flex";
+import { device } from "../styles/device";
 
 const Content = styled(FlexBox)`
-  padding: ${(props) => props.theme.spacing.xl};
+  padding: ${(props) => props.theme.spacing.small};
 
-  @media only screen and (max-width: 768px) {
-    padding: ${(props) => props.theme.spacing.small};
+  @media ${device.tablet} {
+    padding: ${(props) => props.theme.spacing.xl};
   }
 `;
 
@@ -36,16 +37,16 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           <FontAwesomeIcon icon={faBriefcase} />
           Experience
         </h2>
-        {work.map((work) => {
+        {work.map(({ organisation, startDate, endDate, title, id, description }: ResumeSchema) => {
           return (
             <Experience
-              company={work.organisation}
-              startDate={work.startDate}
-              endDate={work.endDate}
-              title={work.title}
-              key={work.id}
+              company={organisation}
+              startDate={startDate}
+              endDate={endDate}
+              title={title}
+              key={id}
             >
-              <div dangerouslySetInnerHTML={createMarkup(work.description.html)}></div>
+              <div dangerouslySetInnerHTML={createMarkup(description.html)}></div>
             </Experience>
           );
         })}
@@ -53,36 +54,40 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
           <FontAwesomeIcon icon={faCertificate} />
           Certificates
         </h2>
-        {certificates.map((work) => {
-          return (
-            <Experience
-              company={work.organisation}
-              startDate={work.startDate}
-              endDate={work.endDate}
-              title={work.title}
-              key={work.id}
-            >
-              <div dangerouslySetInnerHTML={createMarkup(work.description.html)}></div>
-            </Experience>
-          );
-        })}
+        {certificates.map(
+          ({ organisation, startDate, endDate, title, id, description }: ResumeSchema) => {
+            return (
+              <Experience
+                company={organisation}
+                startDate={startDate}
+                endDate={endDate}
+                title={title}
+                key={id}
+              >
+                <div dangerouslySetInnerHTML={createMarkup(description.html)}></div>
+              </Experience>
+            );
+          }
+        )}
         <h2>
           <FontAwesomeIcon icon={faGraduationCap} />
           Education
         </h2>
-        {education.map((work) => {
-          return (
-            <Experience
-              company={work.organisation}
-              startDate={work.startDate}
-              endDate={work.endDate}
-              title={work.title}
-              key={work.id}
-            >
-              <div dangerouslySetInnerHTML={createMarkup(work.description.html)}></div>
-            </Experience>
-          );
-        })}
+        {education.map(
+          ({ organisation, startDate, endDate, title, id, description }: ResumeSchema) => {
+            return (
+              <Experience
+                company={organisation}
+                startDate={startDate}
+                endDate={endDate}
+                title={title}
+                key={id}
+              >
+                <div dangerouslySetInnerHTML={createMarkup(description.html)}></div>
+              </Experience>
+            );
+          }
+        )}
       </Content>
     </Layout>
   );
