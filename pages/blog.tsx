@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import Image from "next/image";
 
 import { Layout } from "../components/UI/Layout";
 import { Header } from "../components/UI/Header";
@@ -15,6 +16,7 @@ const Blog: FC = () => {
             🙈
           </span>
         </h2>
+        <Image src="/images/background-image-home.jpg" height={500} width={500} />
       </FlexBox>
     </Layout>
   );

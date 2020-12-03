@@ -1,7 +1,8 @@
 import React, { FC, useEffect } from "react";
 import Link from "next/link";
-import styled from "styled-components";
+import Image from "next/image";
 
+import styled from "styled-components";
 import { FlexBox, FlexItem } from "react-styled-flex";
 import { device } from "../../../styles/device";
 
@@ -46,7 +47,7 @@ const Copyright = styled.span`
   text-align: center;
 `;
 
-const Avatar = styled.img`
+const Avatar = styled(Image)`
   height: 100px;
   border-radius: ${(props) => props.theme.borderRadius.round};
   margin: 8px 0;
@@ -126,7 +127,13 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
             🇳🇱
           </span>
         </Subheading>
-        <Avatar src="./images/sander_van_rijsoort.png" alt="Sander van Rijsoort" />
+        <Avatar
+          src="/images/sander_van_rijsoort.png"
+          alt="Sander van Rijsoort"
+          height={175}
+          width={175}
+        />
+        <FlexBox></FlexBox>
       </FlexItem>
       <FlexItem width="100%" flex={3}>
         <FlexBox width="100%" column>
