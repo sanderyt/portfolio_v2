@@ -70,7 +70,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .svg-inline--fa.fa-w-16, 
-  .svg-inline--fa.fa-w-20 {
+  .svg-inline--fa.fa-w-20,
+  .svg-inline--fa.fa-w-14 {
     margin: ${(props) => `0 ${props.theme.spacing.normal}`}
   }
 `;

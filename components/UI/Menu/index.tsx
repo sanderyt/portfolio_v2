@@ -41,6 +41,8 @@ const Footer = styled(FlexItem)`
 
 const Copyright = styled.span`
   color: ${(props) => props.theme.colors.greyScales.text};
+  font-size: ${(props) => props.theme.fontSizes.extraSmall};
+  text-align: center;
 `;
 
 const Avatar = styled.img`
@@ -129,7 +131,13 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
         </FlexBox>
       </FlexItem>
       <Footer box flex={1} column justifyContent="flex-end">
-        <Copyright>Theme made with React, TypeScript and Styled Components</Copyright>
+        <Copyright>
+          Theme made by my, code{" "}
+          <a href="https://github.com/sanderyt/portfolio_v2" target="_blank" rel="noreferrer">
+            here
+          </a>
+        </Copyright>
+        <Copyright>With React(Next.js), TypeScript, Styled Components and GraphQL</Copyright>
       </Footer>
     </StyledMenu>
   );

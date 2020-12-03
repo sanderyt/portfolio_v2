@@ -1,7 +1,51 @@
 import { FC } from "react";
+import styled from "styled-components";
 import { NextSeo } from "next-seo";
 
 import { Layout } from "../components/UI/Layout";
+import { FlexBox } from "react-styled-flex";
+import { Button } from "../components/UI/Button";
+import { device } from "../styles/device";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
+import { tada } from "../styles/keyframes";
+import Link from "next/link";
+
+const Overlay = styled.div`
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: ${(props) => props.theme.layers.layer2};
+`;
+
+const Content = styled(FlexBox)`
+  background-image: url("./images/background-image-home.jpg");
+`;
+
+const Fold = styled(FlexBox)`
+  width: 90%;
+  padding: ${(props) => props.theme.spacing.large};
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: ${(props) => props.theme.borderRadius.large};
+  z-index: ${(props) => props.theme.layers.layer3};
+  color: ${(props) => props.theme.colors.primaryColor};
+  animation: ${tada} 1000ms ease;
+
+  @media ${device.laptop} {
+    width: 700px;
+  }
+`;
+
+const Heading = styled.h1`
+  text-align: center;
+`;
+
+const Subheading = styled.h3`
+  color: ${(props) => props.theme.colors.greyScales.text};
+  text-align: center;
+  line-height: 1.5;
+`;
 
 const Home: FC = () => (
   <Layout>
@@ -9,11 +53,33 @@ const Home: FC = () => (
       title="React developer from Amsterdam"
       description="My name is Sander van Rijsoort and have been a React developer for almost 2 years. Let's work together!"
     />
-    <h1>
-      Hi, I am <span>Sander van Rijsoort.</span> I get in a flow by writing code.
-    </h1>
-    <h2>Based in Amsterdam. Lets build together.</h2>
-    <span>Maybe particle system here</span>
+    <Overlay />
+    <Content center column height="100vh" width="100vw">
+      <Fold center column>
+        <Heading>Hi, my name is Sander van Rijsoort</Heading>
+        <Subheading>
+          I love building front-ends with React, Next.js, JavaScript, TypeScript, GraphQL, Vue...
+        </Subheading>
+        <FlexBox>
+          <Link href="/projects">
+            <a>
+              <Button isLoading={false} isSubmit={false}>
+                Check my work
+                <FontAwesomeIcon icon={faLongArrowAltRight} />
+              </Button>
+            </a>
+          </Link>
+          <Link href="/resume">
+            <a>
+              <Button isLoading={false} isSubmit={false}>
+                Check my resume
+                <FontAwesomeIcon icon={faLongArrowAltRight} />
+              </Button>
+            </a>
+          </Link>
+        </FlexBox>
+      </Fold>
+    </Content>
   </Layout>
 );
 
