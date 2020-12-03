@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import Image from "next/image";
 
 import { FlexBox, FlexItem } from "react-styled-flex";
 import { fadeIn } from "../../../styles/keyframes";
@@ -26,7 +27,7 @@ const StyledThumb = styled(FlexItem)`
   }
 `;
 
-const Image = styled.img`
+const StyledImage = styled(Image)`
   width: 100%;
   height: 300px;
   border-radius: ${(props) => props.theme.borderRadius.large};
@@ -48,7 +49,7 @@ export const Thumb: FC<ThumbProps> = ({ name, id, thumb }) => {
   return (
     <Link href={`/project/${id}`}>
       <StyledThumb center column box>
-        <Image src={thumb} alt={name} />
+        <StyledImage src={thumb} alt={name} width={400} height={300} />
         <Details column center>
           <Name>{name}</Name>
         </Details>
