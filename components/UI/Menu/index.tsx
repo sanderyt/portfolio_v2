@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { FlexBox, FlexItem } from "react-styled-flex";
 
 const StyledMenu = styled(FlexBox)`
-  z-index: ${(props) => props.theme.layers.layer3};
+  z-index: ${(props) => props.theme.layers.layer4};
   background-color: ${(props) => props.theme.colors.greyScales.veryLight};
   box-shadow: ${(props) => props.theme.boxShadow};
   position: fixed;
