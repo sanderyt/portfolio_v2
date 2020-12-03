@@ -6,12 +6,13 @@ import { Layout } from "../components/UI/Layout";
 import { FlexBox } from "react-styled-flex";
 import { Button } from "../components/UI/Button";
 import { device } from "../styles/device";
+import Div100vh from "react-div-100vh";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import { tada } from "../styles/keyframes";
 import Link from "next/link";
 
-const Overlay = styled.div`
+const Overlay = styled(Div100vh)`
   background-color: rgba(0, 0, 0, 0.3);
   width: 100vw;
   height: 100vh;
@@ -19,8 +20,12 @@ const Overlay = styled.div`
   z-index: ${(props) => props.theme.layers.layer2};
 `;
 
-const Content = styled(FlexBox)`
+const Content = styled(Div100vh)`
   background-image: url("./images/background-image-home.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 `;
 
 const Fold = styled(FlexBox)`
@@ -39,12 +44,22 @@ const Fold = styled(FlexBox)`
 
 const Heading = styled.h1`
   text-align: center;
+  font-size: ${(props) => props.theme.fontSizes.medium};
+
+  @media ${device.laptop} {
+    font-size: ${(props) => props.theme.fontSizes.large};
+  }
 `;
 
 const Subheading = styled.h3`
   color: ${(props) => props.theme.colors.greyScales.text};
   text-align: center;
   line-height: 1.5;
+  font-size: ${(props) => props.theme.fontSizes.extraSmall};
+
+  @media ${device.laptop} {
+    font-size: ${(props) => props.theme.fontSizes.medium};
+  }
 `;
 
 const Home: FC = () => (
@@ -54,7 +69,7 @@ const Home: FC = () => (
       description="My name is Sander van Rijsoort and have been a React developer for almost 2 years. Let's work together!"
     />
     <Overlay />
-    <Content center column height="100vh" width="100vw">
+    <Content>
       <Fold center column>
         <Heading>Hi, my name is Sander van Rijsoort</Heading>
         <Subheading>
