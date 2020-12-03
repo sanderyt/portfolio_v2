@@ -18,7 +18,7 @@ const StyledMenu = styled(FlexBox)`
   @media only screen and (max-width: 768px) {
     width: 100%;
     transform: ${(props) =>
-      props.isOpen ? `translateY(0%) translateX(0%)` : `translateX(150%) translateY(-150%)`};
+      props.$isOpen ? `translateY(0%) translateX(0%)` : `translateX(150%) translateY(-150%)`};
   }
 `;
 
@@ -106,7 +106,7 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
   };
 
   return (
-    <StyledMenu center alignItems="center" justifyContent="space-between" column isOpen={isOpen}>
+    <StyledMenu center alignItems="center" justifyContent="space-between" column $isOpen={isOpen}>
       <FlexItem alignItems="center" column flex={6} box>
         <Heading>
           Sander van Rijsoort
