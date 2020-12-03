@@ -3,6 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 import { FlexBox, FlexItem } from "react-styled-flex";
+import { device } from "../../../styles/device";
 
 const StyledMenu = styled(FlexBox)`
   z-index: ${(props) => props.theme.layers.layer4};
@@ -46,8 +47,34 @@ const Copyright = styled.span`
 `;
 
 const Avatar = styled.img`
-  height: 175px;
+  height: 100px;
   border-radius: ${(props) => props.theme.borderRadius.round};
+  margin: 8px 0;
+
+  @media ${device.laptop} {
+    height: 175px;
+  }
+`;
+
+const Heading = styled.h1`
+  color: ${(props) => props.theme.colors.primaryColor};
+  font-size: ${(props) => props.theme.fontSizes.medium};
+  padding-top: 30px;
+  margin-bottom: 0;
+
+  @media ${device.laptop} {
+    font-size: ${(props) => props.theme.fontSizes.large};
+  }
+`;
+
+const Subheading = styled.h2`
+  color: ${(props) => props.theme.colors.greyScales.text};
+  font-size: ${(props) => props.theme.fontSizes.small};
+  margin-bottom: 0;
+
+  @media ${device.laptop} {
+    font-size: ${(props) => props.theme.fontSizes.medium};
+  }
 `;
 
 type MenuProps = {
@@ -81,25 +108,25 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
   return (
     <StyledMenu center alignItems="center" justifyContent="space-between" column isOpen={isOpen}>
       <FlexItem alignItems="center" column flex={6} box>
-        <h1>
+        <Heading>
           Sander van Rijsoort
           <span role="img" aria-label="helloIcon">
             👋
           </span>
-        </h1>
-        <h2>
+        </Heading>
+        <Subheading>
           React developer
           <span role="img" aria-label="reactIcon">
             ⚛
           </span>
-        </h2>
-        <Avatar src="./images/sander_van_rijsoort.png" alt="Sander van Rijsoort" />
-        <h3>
+        </Subheading>
+        <Subheading>
           Based in Amsterdam
           <span role="img" aria-label="dutchIcon">
             🇳🇱
           </span>
-        </h3>
+        </Subheading>
+        <Avatar src="./images/sander_van_rijsoort.png" alt="Sander van Rijsoort" />
       </FlexItem>
       <FlexItem width="100%" flex={3}>
         <FlexBox width="100%" column>
