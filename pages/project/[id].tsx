@@ -20,13 +20,19 @@ const Content = styled(FlexBox)`
   line-height: 1.75;
 
   & p {
-    padding: ${(props) => `0 ${props.theme.spacing.xl}`};
+    padding: ${(props) => `0 ${props.theme.spacing.small}`};
+    text-align: justify;
+
+    @media ${device.laptop} {
+      padding: ${(props) => `0 ${props.theme.spacing.xl}`};
+    }
   }
 
   & img {
     width: 100%;
     height: 325px;
-    border: ${(props) => props.theme.borders.thinLine};
+    border-top: ${(props) => props.theme.borders.thinLine};
+    border-bottom: ${(props) => props.theme.borders.thinLine};
 
     @media ${device.laptop} {
       width: 800px;
