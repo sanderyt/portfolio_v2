@@ -26,6 +26,7 @@ const Content = styled(Div100vh)`
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-size: cover;
 `;
 
 const Fold = styled(FlexBox)`
