@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import Image from "next/image";
 
 import { Layout } from "../components/UI/Layout";
 import { Header } from "../components/UI/Header";
@@ -10,13 +9,7 @@ const Blog: FC = () => {
     <Layout>
       <Header title="Blog" />
       <FlexBox center>
-        <h2>
-          Still have to work on the first article...{" "}
-          <span role="img" aria-label="monkeyIcon">
-            🙈
-          </span>
-        </h2>
-        <Image src="/images/background-image-home.jpg" height={500} width={500} />
+        <h2>Still have to work on the first article...</h2>
       </FlexBox>
     </Layout>
   );
