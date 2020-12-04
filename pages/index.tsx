@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import { tada } from "../styles/keyframes";
 import Link from "next/link";
+import Image from "next/image";
 
 const Overlay = styled(Div100vh)`
   background-color: rgba(0, 0, 0, 0.3);
@@ -21,11 +22,11 @@ const Overlay = styled(Div100vh)`
 `;
 
 const Content = styled(Div100vh)`
-  background-image: url("./images/background-image-home.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative;
   background-size: cover;
 `;
 
@@ -71,6 +72,7 @@ const Home: FC = () => (
     />
     <Overlay />
     <Content>
+      <Image src="/images/background-image-home.jpg" layout="fill" />
       <Fold center column>
         <Heading>Hi, my name is Sander van Rijsoort</Heading>
         <Subheading>

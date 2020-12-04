@@ -88,22 +88,11 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
   }, [isOpen]);
 
   const addNoScroll = (): void => {
-    //To make it work for Safari mobile
-    const scrollPosition = window.pageYOffset;
-
     document.body.classList.add("no-scroll");
-    document.body.setAttribute("scrollPosition", `${scrollPosition}`);
-
-    document.documentElement.setAttribute("scrollPosition", `${scrollPosition}`);
   };
 
   const removeNoScroll = (): void => {
     document.body.classList.remove("no-scroll");
-    document.documentElement.classList.remove("no-scroll");
-
-    const scrollPosition = document.body.getAttribute("scrollPosition");
-
-    scrollPosition && window.scrollTo(0, parseInt(scrollPosition));
   };
 
   return (
@@ -130,8 +119,8 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
         <Avatar
           src="/images/sander_van_rijsoort.png"
           alt="Sander van Rijsoort"
-          height={175}
-          width={175}
+          height={100}
+          width={100}
         />
         <FlexBox></FlexBox>
       </FlexItem>
