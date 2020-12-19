@@ -30,7 +30,8 @@ const StyledThumb = styled(FlexItem)`
 const StyledImage = styled(Image)`
   width: 100%;
   height: 300px;
-  border-radius: ${(props) => props.theme.borderRadius.large};
+  border-top-left-radius: ${(props) => props.theme.borderRadius.large};
+  border-top-right-radius: ${(props) => props.theme.borderRadius.large};
   object-fit: cover;
 `;
 

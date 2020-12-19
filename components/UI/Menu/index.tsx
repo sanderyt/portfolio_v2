@@ -194,7 +194,7 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
             here
           </a>
         </Copyright>
-        <Copyright>With React(Next.js), TypeScript, Styled Components and GraphQL</Copyright>
+        <Copyright>With React, TypeScript, Styled Components and GraphQL</Copyright>
       </Footer>
     </StyledMenu>
   );
