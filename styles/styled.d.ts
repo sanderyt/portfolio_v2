@@ -50,6 +50,7 @@ declare module "styled-components" {
     fontSizes: {
       extraSmall: string;
       small: string;
+      sm: string;
       medium: string;
       large: string;
     };

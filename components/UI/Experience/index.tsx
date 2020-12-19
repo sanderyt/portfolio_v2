@@ -59,7 +59,7 @@ const Title = styled.span`
 const Company = styled.span`
   color: ${(props) => props.theme.colors.greyScales.text};
   font-weight: bold;
-  font-size: ${(props) => props.theme.fontSizes.small};
+  font-size: ${(props) => props.theme.fontSizes.sm};
   margin-bottom: ${(props) => props.theme.spacing.small};
 `;
 

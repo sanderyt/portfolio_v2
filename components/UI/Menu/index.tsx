@@ -5,6 +5,9 @@ import Image from "next/image";
 import styled from "styled-components";
 import { FlexBox, FlexItem } from "react-styled-flex";
 import { device } from "../../../styles/device";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const StyledMenu = styled(FlexBox)`
   z-index: ${(props) => props.theme.layers.layer4};
@@ -49,11 +52,13 @@ const Copyright = styled.span`
 
 const Avatar = styled(Image)`
   height: 100px;
+  width: 100px;
   border-radius: ${(props) => props.theme.borderRadius.round};
-  margin: 8px 0;
+  margin: ${(props) => `${props.theme.spacing.normal} 0`};
 
   @media ${device.laptop} {
-    height: 175px;
+    height: 200px;
+    width: 200px;
   }
 `;
 
@@ -78,6 +83,21 @@ const Subheading = styled.h2`
   }
 `;
 
+const Icons = styled(FlexBox)`
+  padding: ${(props) => props.theme.spacing.medium};
+  font-size: ${(props) => props.theme.fontSizes.medium};
+`;
+
+const Icon = styled(FontAwesomeIcon)`
+  cursor: pointer;
+  transition: ${(props) => props.theme.transition.ease};
+  color: ${(props) => props.theme.colors.greyScales.text};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.primaryColor};
+  }
+`;
+
 type MenuProps = {
   isOpen: boolean;
 };
@@ -95,6 +115,10 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
     document.body.classList.remove("no-scroll");
   };
 
+  const githubIcon = faGithub as IconProp;
+  const linkedInIcon = faLinkedin as IconProp;
+  const facebookIcon = faFacebook as IconProp;
+
   return (
     <StyledMenu center alignItems="center" justifyContent="space-between" column $isOpen={isOpen}>
       <FlexItem alignItems="center" column flex={6} box>
@@ -110,19 +134,29 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
             ⚛
           </span>
         </Subheading>
-        <Subheading>
-          Based in Amsterdam
-          <span role="img" aria-label="dutchIcon">
-            🇳🇱
-          </span>
-        </Subheading>
         <Avatar
           src="/images/sander_van_rijsoort.png"
           alt="Sander van Rijsoort"
-          height={100}
-          width={100}
+          height={200}
+          width={200}
         />
-        <FlexBox></FlexBox>
+        <Icons>
+          <Link href="https://github.com/sanderyt">
+            <a target="_blank">
+              <Icon icon={githubIcon} />
+            </a>
+          </Link>
+          <Link href="https://www.linkedin.com/in/sander-van-rijsoort-335418140/">
+            <a target="_blank">
+              <Icon icon={linkedInIcon} />
+            </a>
+          </Link>
+          <Link href="https://www.facebook.com/sander.vanrijsoort">
+            <a target="_blank">
+              <Icon icon={facebookIcon} />
+            </a>
+          </Link>
+        </Icons>
       </FlexItem>
       <FlexItem width="100%" flex={3}>
         <FlexBox width="100%" column>

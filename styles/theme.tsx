@@ -50,6 +50,7 @@ const theme: DefaultTheme = {
   fontSizes: {
     extraSmall: "0.75rem",
     small: "1rem",
+    sm: "1.25rem",
     medium: "1.5rem",
     large: "2rem",
   },

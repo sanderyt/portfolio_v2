@@ -9,12 +9,13 @@ type HeaderProps = {
 };
 
 const StyledHeader = styled(FlexBox)`
-  background-color: ${(props) => props.theme.colors.greyScales.veryLight};
+  background: rgb(6, 180, 154);
+  background: linear-gradient(90deg, rgba(6, 180, 154, 1) 0%, rgba(247, 247, 247, 1) 100%);
   height: 200px;
 `;
 
 const Title = styled.h1`
-  color: ${(props) => props.theme.colors.primaryColor};
+  color: white;
 `;
 
 export const Header: FC<HeaderProps> = ({ title, smallDescription }) => {
