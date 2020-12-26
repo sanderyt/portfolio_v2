@@ -164,11 +164,6 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
               Resume
             </NavigationItem>
           </Link>
-          <Link href="/blog">
-            <NavigationItem center as="li">
-              Blog
-            </NavigationItem>
-          </Link>
           <Link href="/contact">
             <NavigationItem center as="li">
               Contact
