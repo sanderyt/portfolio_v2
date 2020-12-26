@@ -57,8 +57,8 @@ const Avatar = styled(Image)`
   margin: ${(props) => `${props.theme.spacing.normal} 0`};
 
   @media ${device.laptop} {
-    height: 200px;
-    width: 200px;
+    height: 100px;
+    width: 100px;
   }
 `;
 
@@ -127,8 +127,8 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
         <Avatar
           src="/images/sander_van_rijsoort.png"
           alt="Sander van Rijsoort"
-          height={200}
-          width={200}
+          height={125}
+          width={125}
         />
         <Icons>
           <Link href="https://github.com/sanderyt">
