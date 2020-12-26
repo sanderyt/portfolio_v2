@@ -51,6 +51,7 @@ const Function = styled(FlexItem)`
 
 const Title = styled.span`
   font-size: ${(props) => props.theme.fontSizes.medium};
+  font-family: ${(props) => props.theme.fonts.heading[0]};
   font-weight: bold;
   color: ${(props) => `${props.theme.colors.primaryColor}`};
   margin-bottom: ${(props) => props.theme.spacing.small};
@@ -58,6 +59,7 @@ const Title = styled.span`
 
 const Company = styled.span`
   color: ${(props) => props.theme.colors.greyScales.text};
+  font-family: ${(props) => props.theme.fonts.heading[0]};
   font-weight: bold;
   font-size: ${(props) => props.theme.fontSizes.sm};
   margin-bottom: ${(props) => props.theme.spacing.small};

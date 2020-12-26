@@ -6,10 +6,15 @@ import { Container, Row, Col } from "styled-bootstrap-grid";
 import { FlexBox } from "react-styled-flex";
 import { Contactform } from "../components/Forms/Contactform";
 import { Header } from "../components/UI/Header";
+import { NextSeo } from "next-seo";
 
 const Contact: FC = () => {
   return (
     <Layout>
+      <NextSeo
+        title="Contact | React developer from Amsterdam"
+        description="My name is Sander van Rijsoort and have been a React developer for almost 2 years. Let's work together!"
+      />
       <Header title="Contact" />
       <Container fluid>
         <Row>

@@ -18,6 +18,13 @@ export const GlobalStyle = createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "Circular";
+    font-weight: 500;
+    src: url("../fonts/CircularStd-Medium.otf");
+    font-display: swap;
+  }
+
   body,
   html,
   button,

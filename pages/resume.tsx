@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faCertificate, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { FlexBox } from "react-styled-flex";
 import { device } from "../styles/device";
+import { NextSeo } from "next-seo";
 
 const Content = styled(FlexBox)`
   padding: ${(props) => props.theme.spacing.small};
@@ -31,6 +32,7 @@ type ResumeProps = {
 const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
   return (
     <Layout>
+      <NextSeo title="Resume | React developer from Amsterdam" description="Check out my resume." />
       <Header title="Resume" />
       <Content column>
         <h2>

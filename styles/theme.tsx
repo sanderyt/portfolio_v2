@@ -45,7 +45,7 @@ const theme: DefaultTheme = {
   boxShadow: "0 0 10px #adadad",
   fonts: {
     main: ["WorkSans", "sans-serif"],
-    heading: ["Montserrat", "sans-serif"],
+    heading: ["Circular", "sans-serif"],
   },
   fontSizes: {
     extraSmall: "0.75rem",

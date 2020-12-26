@@ -122,18 +122,8 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
   return (
     <StyledMenu center alignItems="center" justifyContent="space-between" column $isOpen={isOpen}>
       <FlexItem alignItems="center" column flex={6} box>
-        <Heading>
-          Sander van Rijsoort
-          <span role="img" aria-label="helloIcon">
-            👋
-          </span>
-        </Heading>
-        <Subheading>
-          React developer
-          <span role="img" aria-label="reactIcon">
-            ⚛
-          </span>
-        </Subheading>
+        <Heading>Sander van Rijsoort</Heading>
+        <Subheading>React developer</Subheading>
         <Avatar
           src="/images/sander_van_rijsoort.png"
           alt="Sander van Rijsoort"

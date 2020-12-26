@@ -7,6 +7,7 @@ import { ProjectSchema } from "../types/typings";
 import { Layout } from "../components/UI/Layout";
 import { Thumb } from "../components/UI/Thumb";
 import { Header } from "../components/UI/Header";
+import { NextSeo } from "next-seo";
 
 type ProjectsProps = {
   projects: ProjectSchema[];
@@ -15,6 +16,10 @@ type ProjectsProps = {
 const Projects: FC<ProjectsProps> = ({ projects }) => {
   return (
     <Layout>
+      <NextSeo
+        title="Projects | React developer from Amsterdam"
+        description="Check out all my projects I have been working on."
+      />
       <Header title="Projects" />
       {projects &&
         projects.map(({ title, id, projectImages }: ProjectSchema) => {

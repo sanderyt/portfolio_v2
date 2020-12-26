@@ -10,6 +10,7 @@ import { Layout } from "../../components/UI/Layout";
 import { ProjectHeader } from "../../components/UI/ProjectHeader";
 import { FlexBox } from "react-styled-flex";
 import { device } from "../../styles/device";
+import { NextSeo } from "next-seo";
 
 type ProjectProps = {
   project: ProjectSchema;
@@ -49,6 +50,10 @@ const Project: FC<ProjectProps> = ({
 }) => {
   return (
     <Layout>
+      <NextSeo
+        title={`${title} | React developer from Amsterdam`}
+        description="My name is Sander van Rijsoort and have been a React developer for almost 2 years. Let's work together!"
+      />
       <ProjectHeader
         title={title}
         url={url}
