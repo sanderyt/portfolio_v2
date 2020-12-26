@@ -65,7 +65,6 @@ const Avatar = styled(Image)`
 const Heading = styled.h1`
   color: ${(props) => props.theme.colors.primaryColor};
   font-size: ${(props) => props.theme.fontSizes.medium};
-  padding-top: 30px;
   margin-bottom: 0;
 
   @media ${device.laptop} {
@@ -84,7 +83,7 @@ const Subheading = styled.h2`
 `;
 
 const Icons = styled(FlexBox)`
-  padding: ${(props) => props.theme.spacing.medium};
+  padding-top: ${(props) => props.theme.spacing.small};
   font-size: ${(props) => props.theme.fontSizes.medium};
 `;
 
