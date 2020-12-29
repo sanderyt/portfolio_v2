@@ -67,10 +67,12 @@ const Project: FC<ProjectProps> = ({
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { id } = ctx.query;
+  const { slug } = ctx.query;
+
+  console.log(ctx.query);
 
   const variables = {
-    id,
+    slug,
   };
 
   const response = client && (await client.request(getSingleProject, variables));

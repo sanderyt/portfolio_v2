@@ -8,7 +8,7 @@ import { fadeIn } from "../../../styles/keyframes";
 
 type ThumbProps = {
   name: string;
-  id: number;
+  slug: string;
   thumb: string;
 };
 
@@ -46,9 +46,9 @@ const Details = styled(FlexBox)`
 
 const Name = styled.h3``;
 
-export const Thumb: FC<ThumbProps> = ({ name, id, thumb }) => {
+export const Thumb: FC<ThumbProps> = ({ name, thumb, slug }) => {
   return (
-    <Link href={`/project/${id}`}>
+    <Link href={`/project/${slug}`}>
       <StyledThumb center column box>
         <StyledImage src={thumb} alt={name} width={400} height={300} />
         <Details column center>

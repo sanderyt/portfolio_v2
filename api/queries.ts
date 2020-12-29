@@ -1,8 +1,8 @@
 import { gql } from "graphql-request";
 
 export const getSingleProject = gql`
-  query getSingleProject($id: ID!) {
-    project(where: { id: $id }) {
+  query getSingleProject($slug: String) {
+    project(where: { slug: $slug }) {
       id
       title
       url
