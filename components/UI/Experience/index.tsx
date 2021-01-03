@@ -47,6 +47,10 @@ const Timeline = styled(FlexItem)`
 
 const Function = styled(FlexItem)`
   padding-bottom: ${(props) => props.theme.spacing.xl};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  background: ${(props) => props.theme.colors.greyScales.light};
+  padding: ${(props) => props.theme.spacing.medium};
+  border-radius: ${(props) => props.theme.borderRadius.large};
 `;
 
 const Title = styled.span`
