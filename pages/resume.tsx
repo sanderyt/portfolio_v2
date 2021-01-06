@@ -36,7 +36,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
       <Header title="Resume" />
       <Content column>
         <h3>
-          <a href="./cv_sander_van_rijsoort.pdf" target="_blank">
+          <a href="./updated_cv_sander_van_rijsoort.pdf" target="_blank">
             Download CV in PDF
           </a>
         </h3>
