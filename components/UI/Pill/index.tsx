@@ -17,7 +17,7 @@ const StyledPill = styled(FlexItem)`
 
 export const Pill: FC<PillProps> = ({ children }) => {
   const renderColor = (name: string): string => {
-    if (name === "React") return "#61dafb";
+    if (name === "React" || name === "ReactNative") return "#61dafb";
     if (name === "NodeJS") return "#026e00";
     if (name === "Strapi") return "#8c4bff";
     if (name === "NextJS") return "#000";
@@ -29,6 +29,9 @@ export const Pill: FC<PillProps> = ({ children }) => {
     if (name === "CSharp") return "#903ba7";
     if (name === "Firebase") return "#ffcb31";
     if (name === "Unity") return "#000";
+    if (name === "Redux") return "#764abc";
+    if (name === "StyledComponents") return "#db7093";
+    if (name === "MaterialUI") return "#1976d2";
     return "#808080";
   };
 

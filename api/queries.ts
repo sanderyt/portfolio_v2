@@ -22,7 +22,7 @@ export const getSingleProject = gql`
 
 export const getProjects = gql`
   query getProjects {
-    projects {
+    projects(orderBy: startDate_DESC) {
       id
       title
       url
@@ -42,7 +42,7 @@ export const getProjects = gql`
 
 export const getResume = gql`
   query getResume {
-    resumes {
+    resumes(orderBy: startDate_DESC) {
       id
       title
       type
