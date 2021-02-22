@@ -30,7 +30,7 @@ const StyledTextarea = styled(FlexBox)`
 `;
 
 const Input = styled.textarea<InputProps>`
-  width: 300px;
+  width: 100%;
   background-color: ${(props) => props.theme.colors.greyScales.medium};
   border: ${(props) => (props.isError ? `1px solid ${props.theme.colors.red}` : `none`)};
   outline: none;
