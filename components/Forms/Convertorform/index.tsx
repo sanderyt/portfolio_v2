@@ -26,7 +26,7 @@ export const Convertorform = (): JSX.Element => {
   });
   const onSubmit = (data: ContactFormInput): void => {
     const keys = data.message
-      .split("Microsoft Office Pro Plus 2019 Retail (PHONE Activation):       ")
+      .split("Microsoft Office Pro Plus 2019 Retail (PHONE Activation): ")
       .map((key) => key.trim());
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useConvertedKeys(keys);
