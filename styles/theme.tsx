@@ -44,7 +44,7 @@ const theme: DefaultTheme = {
   },
   boxShadow: "0 0 10px #adadad",
   fonts: {
-    main: ["WorkSans", "sans-serif"],
+    main: ["Gordita", "sans-serif"],
     heading: ["Circular", "sans-serif"],
   },
   fontSizes: {

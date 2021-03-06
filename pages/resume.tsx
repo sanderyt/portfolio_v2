@@ -14,6 +14,7 @@ import { faBriefcase, faCertificate, faGraduationCap } from "@fortawesome/free-s
 import { FlexBox } from "react-styled-flex";
 import { device } from "../styles/device";
 import { NextSeo } from "next-seo";
+import { Button } from "../components/UI/Button";
 
 const Content = styled(FlexBox)`
   padding: ${(props) => props.theme.spacing.small};
@@ -35,11 +36,11 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
       <NextSeo title="Resume | React developer from Amsterdam" description="Check out my resume." />
       <Header title="Resume" />
       <Content column>
-        <h3>
+        <Button isLoading={false}>
           <a href="./newest_update_cv_sander_van_rijsoort.pdf" target="_blank">
             Download CV in PDF
           </a>
-        </h3>
+        </Button>
         <h2>
           <FontAwesomeIcon icon={faBriefcase} />
           Experience

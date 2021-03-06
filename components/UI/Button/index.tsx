@@ -8,7 +8,7 @@ import { device } from "../../../styles/device";
 type ButtonProps = {
   children: ReactNode;
   isLoading: boolean;
-  isSubmit: boolean;
+  isSubmit?: boolean;
 };
 
 interface StyledButtonProps {
@@ -36,6 +36,10 @@ const StyledButton = styled.button<StyledButtonProps>`
 
   @media ${device.laptop} {
     font-size: ${(props) => props.theme.fontSizes.small};
+  }
+
+  a {
+    color: white;
   }
 
   &:hover {

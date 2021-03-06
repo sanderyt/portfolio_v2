@@ -25,6 +25,13 @@ export const GlobalStyle = createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+    font-family: "Gordita";
+    font-weight: 700;
+    src: url("../fonts/Gordita-Regular.otf");
+    font-display: swap;
+  }
+
   body,
   html,
   button,
