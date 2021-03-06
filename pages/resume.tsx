@@ -10,7 +10,12 @@ import { Layout } from "../components/UI/Layout";
 import { Experience } from "../components/UI/Experience";
 import { Header } from "../components/UI/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faCertificate, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBriefcase,
+  faCertificate,
+  faGraduationCap,
+  faDownload,
+} from "@fortawesome/free-solid-svg-icons";
 import { FlexBox } from "react-styled-flex";
 import { device } from "../styles/device";
 import { NextSeo } from "next-seo";
@@ -37,6 +42,7 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
       <Header title="Resume" />
       <Content column>
         <Button isLoading={false}>
+          <FontAwesomeIcon icon={faDownload} />
           <a href="./newest_update_cv_sander_van_rijsoort.pdf" target="_blank">
             Download CV in PDF
           </a>
