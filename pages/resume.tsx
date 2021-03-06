@@ -15,11 +15,13 @@ import {
   faCertificate,
   faGraduationCap,
   faDownload,
+  faTable,
 } from "@fortawesome/free-solid-svg-icons";
 import { FlexBox } from "react-styled-flex";
 import { device } from "../styles/device";
 import { NextSeo } from "next-seo";
 import { Button } from "../components/UI/Button";
+import { Skill } from "../components/UI/Skill";
 
 const Content = styled(FlexBox)`
   padding: ${(props) => props.theme.spacing.small};
@@ -47,6 +49,18 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
             Download CV in PDF
           </a>
         </Button>
+        <h2>
+          <FontAwesomeIcon icon={faTable} />
+          Language Matrix
+        </h2>
+        <Skill language="JavaScript" points={4} years={2.5} />
+        <Skill language="React" points={4} years={2} />
+        <Skill language="Next.js" points={4} years={1.5} />
+        <Skill language="Vue" points={3} years={1} />
+        <Skill language="TypeScript" points={2} years={1.5} />
+        <Skill language="Node.js" points={2} years={1.5} />
+        <Skill language="WordPress" points={3} years={1.5} />
+        <Skill language="C#" points={4} years={1.5} />
         <h2>
           <FontAwesomeIcon icon={faBriefcase} />
           Experience
