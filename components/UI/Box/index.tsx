@@ -1,11 +1,6 @@
 import React, { ReactNode, FC } from "react";
-import styled from "styled-components";
 
-const StyledBox = styled.div`
-  border-radius: ${(props) => props.theme.borderRadius.large};
-  box-shadow: ${(props) => props.theme.boxShadow};
-  padding: 25px;
-`;
+import { StyledBox } from "./styles";
 
 type BoxProps = {
   children: ReactNode;

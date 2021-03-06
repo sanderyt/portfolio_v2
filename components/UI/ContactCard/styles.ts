@@ -3,7 +3,7 @@ import { fadeIn } from "../../../styles/keyframes";
 
 import { FlexBox, FlexItem } from "react-styled-flex";
 
-export const StyledContactCard = styled(FlexBox)`
+const StyledContactCard = styled(FlexBox)`
   width: 80%;
   cursor: pointer;
   margin: ${(props) => props.theme.spacing.small};
@@ -14,19 +14,21 @@ export const StyledContactCard = styled(FlexBox)`
   transition: ${(props) => props.theme.transition.ease};
 `;
 
-export const Icon = styled(FlexItem)`
+const Icon = styled(FlexItem)`
   color: ${(props) => props.theme.colors.primaryColor};
   font-size: ${(props) => props.theme.fontSizes.medium};
 `;
 
-export const Text = styled(FlexItem)`
+const Text = styled(FlexItem)`
   background-color: ${(props) => props.theme.colors.greyScales.light};
   border-bottom-right-radius: ${(props) => props.theme.borderRadius.large};
   border-top-right-radius: ${(props) => props.theme.borderRadius.large};
   height: 100%;
 `;
 
-export const Type = styled.span`
+const Type = styled.span`
   color: ${(props) => props.theme.colors.greyScales.text};
   margin-bottom: ${(props) => props.theme.spacing.normal};
 `;
+
+export { StyledContactCard, Icon, Text, Type };
