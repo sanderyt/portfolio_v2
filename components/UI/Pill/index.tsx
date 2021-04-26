@@ -32,6 +32,8 @@ export const Pill: FC<PillProps> = ({ children }) => {
     if (name === "Redux") return "#764abc";
     if (name === "StyledComponents") return "#db7093";
     if (name === "MaterialUI") return "#1976d2";
+    if (name === "Gatsby") return "#8a4baf";
+    if (name === "TailwindCSS") return "#03b6d3";
     return "#808080";
   };
 
