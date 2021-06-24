@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
@@ -26,8 +27,10 @@ export const Contactform = (): JSX.Element => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: ContactFormInput): void => {
+  const onSubmit = async (data: ContactFormInput): Promise<void> => {
     console.log(data);
+    const response = await axios.get("https://reactdev.io/api/sendEmail");
+    console.log(response, "response");
   };
 
   return (
