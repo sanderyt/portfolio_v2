@@ -27,6 +27,7 @@
     "@zeit/next-sass": "^1.0.1",
     "graphql": "^15.4.0",
     "graphql-request": "^3.3.0",
+    "mailgun-js": "^0.22.0",
     "moment": "^2.29.1",
     "next": "^10.0.3",
     "next-plugin-graphql": "^0.0.2",

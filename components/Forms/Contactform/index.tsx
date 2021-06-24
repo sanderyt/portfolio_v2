@@ -18,13 +18,17 @@ const schema = yup.object().shape({
   message: yup.string().required(),
 });
 
-const Form = styled(FlexBox)``;
+const Form = styled(FlexBox)`
+  width: 80%;
+`;
 
 export const Contactform = (): JSX.Element => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: ContactFormInput): void => console.log(data);
+  const onSubmit = (data: ContactFormInput): void => {
+    console.log(data);
+  };
 
   return (
     <Form noValidate onSubmit={handleSubmit(onSubmit)} as="form" column>
