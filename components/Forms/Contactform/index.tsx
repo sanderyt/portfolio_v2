@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,10 +27,20 @@ export const Contactform = (): JSX.Element => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
+  const [isLoading, setLoading] = useState(false);
+
   const onSubmit = async (data: ContactFormInput): Promise<void> => {
     console.log(data);
+
+    setLoading(true);
+
     const response = await axios.get("https://reactdev.io/api/sendEmail");
-    console.log(response, "response");
+
+    if (response.status === 200) {
+      console.log(response.data, "response");
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -54,7 +64,7 @@ export const Contactform = (): JSX.Element => {
         register={register}
         error={errors.message}
       />
-      <Button isLoading={false} isSubmit>
+      <Button isLoading={isLoading} isSubmit>
         Send
         <FontAwesomeIcon icon={faPaperPlane} />
       </Button>
