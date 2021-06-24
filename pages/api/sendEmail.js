@@ -7,14 +7,13 @@
 //   domain: DOMAIN,
 // });
 
-module.exports = async (req) => {
+module.exports = async (res) => {
   // const data = {
   //   from: "Excited User <me@samples.mailgun.org>",
   //   to: "s.rijsoort@gmail.com",
   //   subject: "Hello",
   //   text: "Testing some Mailgun awesomness!",
   // };
-
   // return new Promise((resolve, reject) => {
   //   mg.messages().send(data, function (error, body) {
   //     console.log(error, "body");
@@ -23,5 +22,5 @@ module.exports = async (req) => {
   //   });
   // });
 
-  req.json({ message: "hello" });
+  res.json({ message: "The serverless function is working" });
 };
