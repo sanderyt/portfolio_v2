@@ -7,7 +7,7 @@
 //   domain: DOMAIN,
 // });
 
-module.exports = async (res) => {
+module.exports = async (req, res) => {
   // const data = {
   //   from: "Excited User <me@samples.mailgun.org>",
   //   to: "s.rijsoort@gmail.com",
