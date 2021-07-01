@@ -5,12 +5,6 @@ const withGraphql = require("next-plugin-graphql");
 module.exports = withGraphql();
 
 module.exports = {
-  images: {
-    domains: ["media.graphcms.com"],
-  },
-};
-
-module.exports = {
   async headers() {
     return [
       {
@@ -27,5 +21,11 @@ module.exports = {
         ],
       },
     ];
+  },
+};
+
+module.exports = {
+  images: {
+    domains: ["media.graphcms.com"],
   },
 };
