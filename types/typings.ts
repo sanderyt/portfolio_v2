@@ -9,7 +9,7 @@ export type ProjectSchema = {
   };
   tech: string[];
   slug: string;
-  projectImages: [{ url: string[] | string }];
+  projectImages: [{ url: string[] }];
 };
 
 export type ResumeSchema = {

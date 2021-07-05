@@ -10,7 +10,7 @@ import { Pill } from "../Pill";
 type ThumbProps = {
   name: string;
   slug: string;
-  thumb: string;
+  thumb: string | string[];
   techs: string[];
 };
 
@@ -49,13 +49,15 @@ const Details = styled(FlexBox)`
 
 const Tech = styled(FlexBox)``;
 
-const Name = styled.h3``;
+const Name = styled.h3`
+  text-align: center;
+`;
 
 export const Thumb: FC<ThumbProps> = ({ name, thumb, slug, techs }) => {
   return (
     <Link href={`/project/${slug}`}>
       <StyledThumb center column box>
-        <StyledImage src={thumb} alt={name} width={400} height={300} />
+        <StyledImage src={thumb as string} alt={name} width={400} height={300} />
         <Details column center>
           <Name>{name}</Name>
           <Tech wrap center>

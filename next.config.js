@@ -4,6 +4,9 @@ module.exports = withSass({});
 const withGraphql = require("next-plugin-graphql");
 module.exports = withGraphql();
 
+const withVideos = require("next-videos");
+module.exports = withVideos();
+
 module.exports = {
   async headers() {
     return [

@@ -13,6 +13,10 @@ const StyledPill = styled(FlexItem)`
   padding: ${(props) => `${props.theme.spacing.micro} ${props.theme.spacing.small} `};
   border-radius: ${(props) => props.theme.borderRadius.large};
   margin: ${(props) => props.theme.spacing.micro};
+
+  &:first-child {
+    margin-left: 0;
+  }
 `;
 
 export const Pill: FC<PillProps> = ({ children }) => {

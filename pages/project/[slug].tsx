@@ -42,12 +42,18 @@ const Content = styled(FlexBox)`
       border-radius: ${(props) => props.theme.borderRadius.large};
       border-top: 5px solid ${(props) => props.theme.colors.primaryColor};
     }
+
+    & video {
+      width: 100%;
+      height: 350px;
+    }
   }
 `;
 
 const Project: FC<ProjectProps> = ({
-  project: { title, description, tech, url, startDate, endDate },
+  project: { title, description, tech, url, startDate, endDate, projectImages },
 }) => {
+  console.log(projectImages, "projectImages");
   return (
     <Layout>
       <NextSeo
@@ -60,6 +66,7 @@ const Project: FC<ProjectProps> = ({
         technologies={tech}
         startDate={startDate}
         endDate={endDate}
+        backgroundImage={projectImages[0].url}
       />
       <Content center column dangerouslySetInnerHTML={createMarkup(description.html)}></Content>
     </Layout>

@@ -16,7 +16,7 @@ const StyledHamburger = styled(FlexBox)`
   right: 0;
   padding-left: 14px;
   padding-top: 5px;
-  z-index: ${(props) => props.theme.layers.layer4};
+  z-index: ${(props) => props.theme.layers.layer6};
   background-color: ${(props) => props.theme.colors.white};
   border: ${(props) => props.theme.borders.thinLine};
 

@@ -29,6 +29,8 @@ const theme: DefaultTheme = {
     layer2: "2",
     layer3: "3",
     layer4: "4",
+    layer5: "5",
+    layer6: "6",
   },
   transition: {
     ease: "all .3s ease",

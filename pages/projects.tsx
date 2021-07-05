@@ -24,13 +24,7 @@ const Projects: FC<ProjectsProps> = ({ projects }) => {
       {projects &&
         projects.map(({ title, slug, id, projectImages, tech }: ProjectSchema) => {
           return (
-            <Thumb
-              name={title}
-              slug={slug}
-              thumb={projectImages[0].url as string}
-              key={id}
-              techs={tech}
-            />
+            <Thumb name={title} slug={slug} thumb={projectImages[0].url} key={id} techs={tech} />
           );
         })}
     </Layout>
