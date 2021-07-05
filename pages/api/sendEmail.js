@@ -6,7 +6,24 @@ const mailersend = new MailerSend({
   api_key: process.env.MAILSENDER_TOKEN,
 });
 
-module.exports = async (req, res) => {
+const allowCors = (fn) => async (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  // another common pattern
+  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
+  return await fn(req, res);
+};
+
+const sendEmail = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json("This method is not allowed");
   }
@@ -47,3 +64,5 @@ module.exports = async (req, res) => {
 
   res.status(200).json({ message: "Your email was successfully send" });
 };
+
+module.exports(allowCors(sendEmail));

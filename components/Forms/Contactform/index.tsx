@@ -30,11 +30,11 @@ export const Contactform = (): JSX.Element => {
   const [isLoading, setLoading] = useState(false);
 
   const onSubmit = async (data: ContactFormInput): Promise<void> => {
-    console.log(data);
-
     setLoading(true);
 
-    const response = await axios.get("https://reactdev.io/api/sendEmail");
+    const response = await axios.post("https://reactdev.io/api/sendEmail", data);
+
+    console.log(response, "response");
 
     if (response.status === 200) {
       console.log(response.data, "response");
