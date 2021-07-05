@@ -1,26 +1,31 @@
-// const mailgun = require("mailgun-js");
-// const API_KEY = "2701cead9eb0a35d663e307859ffc64b-2fbe671d-d7af772a";
-// const DOMAIN = "https://api.mailgun.net/v3/sandboxaad6d95cff054af3a7eb2c94e96b88d1.mailgun.org";
+const Recipient = require("mailersend").Recipient;
+const EmailParams = require("mailersend").EmailParams;
+const MailerSend = require("mailersend");
 
-// const mg = mailgun({
-//   apiKey: API_KEY,
-//   domain: DOMAIN,
-// });
+const mailersend = new MailerSend({
+  api_key: process.env.MAILSENDER_TOKEN,
+});
 
 module.exports = async (req, res) => {
-  // const data = {
-  //   from: "Excited User <me@samples.mailgun.org>",
-  //   to: "s.rijsoort@gmail.com",
-  //   subject: "Hello",
-  //   text: "Testing some Mailgun awesomness!",
-  // };
-  // return new Promise((resolve, reject) => {
-  //   mg.messages().send(data, function (error, body) {
-  //     console.log(error, "body");
-  //     if (error) reject(error);
-  //     if (body) resolve(body);
-  //   });
-  // });
+  if (req.method !== "POST") {
+    return res.status(405).json("This method is not allowed");
+  }
 
-  res.json({ message: "The serverless function is working" });
+  const recipients = [new Recipient("your@client.com", "Your Client")];
+
+  const emailParams = new EmailParams()
+    .setFrom("info@domain.com")
+    .setFromName("Your Name")
+    .setRecipients(recipients)
+    .setSubject("Subject")
+    .setHtml("This is the HTML content")
+    .setText("This is the text content");
+
+  const response = await mailersend.send(emailParams);
+
+  if (response.status !== 200) {
+    return res.json({ message: response.statusText });
+  }
+
+  res.status(200).json({ message: "Your email was successfully send" });
 };
