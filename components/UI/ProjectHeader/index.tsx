@@ -84,7 +84,7 @@ export const ProjectHeader: FC<ProjectHeaderProps> = ({
                 <Detail>Project date</Detail>
                 <span>
                   {moment(startDate).format("DD MMMM, YYYY")} -{" "}
-                  {moment(endDate).format("DD MMMM, YYYY")}{" "}
+                  {moment(endDate).isBefore() ? moment(endDate).format("DD MMMM, YYYY") : "Now"}
                 </span>
               </FlexBox>
             </FlexBox>
