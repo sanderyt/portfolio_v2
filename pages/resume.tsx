@@ -44,12 +44,12 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
       <NextSeo title="Resume | React developer from Amsterdam" description="Check out my resume." />
       <Header title="Resume" />
       <Content column>
-        <Button isLoading={false}>
-          <FontAwesomeIcon icon={faDownload} />
-          <a href="./cv_sander_van_rijsoort_30june2021.pdf" target="_blank">
+        <a href="./cv_sander_van_rijsoort_30june2021.pdf" target="_blank">
+          <Button isLoading={false}>
+            <FontAwesomeIcon icon={faDownload} />
             Download CV in PDF
-          </a>
-        </Button>
+          </Button>
+        </a>
         <h2>
           <FontAwesomeIcon icon={faCode} />
           Skills
