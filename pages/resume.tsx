@@ -6,6 +6,7 @@ import { getResume } from "../api/queries";
 import { ResumeSchema } from "../types/typings";
 import { createMarkup } from "../lib/util";
 
+import { Col, Row } from "styled-bootstrap-grid";
 import { Layout } from "../components/UI/Layout";
 import { Experience } from "../components/UI/Experience";
 import { Header } from "../components/UI/Header";
@@ -15,7 +16,7 @@ import {
   faCertificate,
   faGraduationCap,
   faDownload,
-  faTable,
+  faCode,
 } from "@fortawesome/free-solid-svg-icons";
 import { FlexBox } from "react-styled-flex";
 import { device } from "../styles/device";
@@ -45,22 +46,32 @@ const Resume: FC<ResumeProps> = ({ work, certificates, education }) => {
       <Content column>
         <Button isLoading={false}>
           <FontAwesomeIcon icon={faDownload} />
-          <a href="./newest_update_cv_sander_van_rijsoort.pdf" target="_blank">
+          <a href="./cv_sander_van_rijsoort_30june2021.pdf" target="_blank">
             Download CV in PDF
           </a>
         </Button>
         <h2>
-          <FontAwesomeIcon icon={faTable} />
-          Language Matrix
+          <FontAwesomeIcon icon={faCode} />
+          Skills
         </h2>
-        <Skill language="JavaScript" points={4} years={2.5} />
-        <Skill language="React" points={4} years={2} />
-        <Skill language="Next.js" points={4} years={1.5} />
-        <Skill language="Vue" points={3} years={1} />
-        <Skill language="TypeScript" points={2} years={1.5} />
-        <Skill language="Node.js" points={2} years={1.5} />
-        <Skill language="WordPress" points={3} years={1.5} />
-        <Skill language="C#" points={4} years={1.5} />
+        <Row>
+          <Col md={6}>
+            <Skill language="JavaScript" points={4} />
+            <Skill language="TypeScript" points={4} />
+            <Skill language="React" points={4} />
+            <Skill language="Redux" points={4} />
+            <Skill language="Next.js" points={4} />
+            <Skill language="React Native" points={2} />
+          </Col>
+          <Col md={6}>
+            <Skill language="Vue" points={3} />
+            <Skill language="Vuex" points={3} />
+            <Skill language="Nuxt" points={3} />
+            <Skill language="Node.js" points={2} />
+            <Skill language="WordPress" points={3} />
+            <Skill language="C#" points={3} />
+          </Col>
+        </Row>
         <h2>
           <FontAwesomeIcon icon={faBriefcase} />
           Experience

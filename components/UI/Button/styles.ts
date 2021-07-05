@@ -16,7 +16,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   height: 48px;
   cursor: ${(props) => (props.isLoading ? "not-allowed" : "pointer")};
   font-weight: bold;
-  font-size: ${(props) => props.theme.fontSizes.extraSmall};
+  font-size: ${(props) => props.theme.fontSizes.small};
   color: ${(props) => props.theme.colors.white};
   border-radius: ${(props) => props.theme.borderRadius.large};
   background-color: ${(props) =>
@@ -27,7 +27,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
 
   @media ${device.laptop} {
-    font-size: ${(props) => props.theme.fontSizes.small};
+    font-size: ${(props) => props.theme.fontSizes.sm};
   }
 
   a {

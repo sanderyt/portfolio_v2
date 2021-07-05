@@ -6,13 +6,12 @@ import { FlexItem, FlexBox } from "react-styled-flex";
 interface Props {
   language: string;
   points: number;
-  years: number;
 }
 
 export const Skill: FC<Props> = ({ language, points }) => {
   const elements = [1, 2, 3, 4, 5];
   return (
-    <StyledSkill center>
+    <StyledSkill>
       <FlexItem flex={1}>
         <Language>{language}</Language>
       </FlexItem>

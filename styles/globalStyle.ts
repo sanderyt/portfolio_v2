@@ -27,8 +27,15 @@ export const GlobalStyle = createGlobalStyle`
 
   @font-face {
     font-family: "Gordita";
-    font-weight: 700;
+    font-weight: 500;
     src: url("../fonts/Gordita-Regular.otf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Gordita";
+    font-weight: 700;
+    src: url("../fonts/Gordita-Medium.otf");
     font-display: swap;
   }
 
@@ -76,7 +83,6 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.colors.primaryColor};
     text-decoration: none;
     transition: ${(props) => props.theme.transition.ease};
-    font-weight: bold;
 
     &:hover {
       color: ${(props) => props.theme.colors.greyScales.text};
