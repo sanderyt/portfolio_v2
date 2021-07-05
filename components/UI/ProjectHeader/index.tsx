@@ -40,7 +40,6 @@ const Overlay = styled.div`
 const Title = styled.h1`
   color: ${(props) => props.theme.colors.primaryColor};
   font-size: ${(props) => props.theme.fontSizes.medium};
-  margin: 0;
 
   @media ${device.laptop} {
     font-size: ${(props) => props.theme.fontSizes.large};

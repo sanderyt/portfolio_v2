@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FlexBox, FlexItem } from "react-styled-flex";
 
 export const StyledMenu = styled(FlexBox)`
-  z-index: ${(props) => props.theme.layers.layer4};
+  z-index: ${(props) => props.theme.layers.layer6};
   background-color: ${(props) => props.theme.colors.greyScales.veryLight};
   box-shadow: ${(props) => props.theme.boxShadow};
   position: fixed;

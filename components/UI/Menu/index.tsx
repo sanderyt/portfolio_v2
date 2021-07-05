@@ -93,7 +93,7 @@ export const Menu: FC<MenuProps> = ({ isOpen }) => {
       </FlexItem>
       <Footer box flex={1} column justifyContent="flex-end">
         <Copyright>
-          Theme made by my, code{" "}
+          Theme made by me, code{" "}
           <a href="https://github.com/sanderyt/portfolio_v2" target="_blank" rel="noreferrer">
             here
           </a>

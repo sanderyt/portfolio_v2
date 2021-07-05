@@ -72,11 +72,12 @@ const Home: FC = () => (
     />
     <Overlay />
     <Content>
-      <Image src="/images/background-image-home.jpg" layout="fill" />
+      <Image src="/images/background_asia.jpeg" layout="fill" />
       <Fold center column>
         <Heading>Hi, my name is Sander van Rijsoort</Heading>
         <Subheading>
-          I love building front-ends with React, Next.js, JavaScript, TypeScript, GraphQL, Vue...
+          I love building front-ends with React, Next.js, JavaScript, TypeScript, while travelling
+          the world
         </Subheading>
         <FlexBox>
           <Link href="/projects">

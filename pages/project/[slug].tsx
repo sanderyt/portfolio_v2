@@ -45,7 +45,6 @@ const Content = styled(FlexBox)`
 
     & video {
       width: 100%;
-      height: 350px;
     }
   }
 `;
@@ -53,7 +52,6 @@ const Content = styled(FlexBox)`
 const Project: FC<ProjectProps> = ({
   project: { title, description, tech, url, startDate, endDate, projectImages },
 }) => {
-  console.log(projectImages, "projectImages");
   return (
     <Layout>
       <NextSeo
