@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import styled from "styled-components";
 import { GetServerSideProps } from "next";
 import { client } from "../../api/gqlClient";
@@ -42,16 +42,21 @@ const Content = styled(FlexBox)`
       border-radius: ${(props) => props.theme.borderRadius.large};
       border-top: 5px solid ${(props) => props.theme.colors.primaryColor};
     }
-
-    & video {
-      width: 100%;
-    }
   }
 `;
 
 const Project: FC<ProjectProps> = ({
   project: { title, description, tech, url, startDate, endDate, projectImages },
 }) => {
+  useEffect(() => {
+    const video = document.getElementsByTagName("video")[0];
+
+    if (video) {
+      video.width = 350;
+      video.height = 200;
+    }
+  }, []);
+
   return (
     <Layout>
       <NextSeo
